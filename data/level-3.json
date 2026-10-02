@@ -1,0 +1,217 @@
+{
+  "level": 3,
+  "test": [
+    {
+      "question": "What is the main goal of the Paris Agreement (2015)?",
+      "options": [
+        "Ban all cars by 2025",
+        "Limit global warming to well below 2 °C, aiming for 1.5 °C",
+        "Plant one tree per person",
+        "Stop all international trade"
+      ],
+      "answer": 1,
+      "explanation": "Almost every country agreed to keep warming well below 2 °C above pre-industrial levels."
+    },
+    {
+      "question": "What causes ocean acidification?",
+      "options": [
+        "Oil spills only",
+        "Too much salt",
+        "The ocean absorbing CO₂ from the atmosphere",
+        "Fish waste"
+      ],
+      "answer": 2,
+      "explanation": "Dissolved CO₂ forms carbonic acid, making it harder for shellfish and corals to build shells."
+    },
+    {
+      "question": "Portugal produces a large share of its electricity from which sources?",
+      "options": ["Nuclear power", "Wind and hydropower", "Coal", "Geothermal only"],
+      "answer": 1,
+      "explanation": "Portugal has no nuclear plants and closed its last coal plant in 2021. Wind and water lead the way."
+    },
+    {
+      "question": "What is a circular economy?",
+      "options": [
+        "An economy that only uses coins",
+        "Take, make, throw away",
+        "Keeping products and materials in use for as long as possible",
+        "Trading only with neighbouring countries"
+      ],
+      "answer": 2,
+      "explanation": "Instead of a straight line to the bin, materials are reused, repaired and recycled."
+    },
+    {
+      "question": "What are the products of photosynthesis?",
+      "options": [
+        "Glucose and oxygen",
+        "Carbon dioxide and water",
+        "Nitrogen and salt",
+        "Methane and oxygen"
+      ],
+      "answer": 0,
+      "explanation": "6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂."
+    },
+    {
+      "question": "What is a carbon sink?",
+      "options": [
+        "A kitchen sink made of carbon",
+        "Anything that absorbs more carbon than it releases",
+        "A factory chimney",
+        "A coal mine"
+      ],
+      "answer": 1,
+      "explanation": "Forests, oceans and soils are natural carbon sinks."
+    },
+    {
+      "question": "What does \"biodegradable\" mean?",
+      "options": [
+        "Made from plastic",
+        "Can be broken down naturally by microorganisms",
+        "Can be recycled in the yellow bin",
+        "Lasts forever"
+      ],
+      "answer": 1,
+      "explanation": "Bacteria and fungi break biodegradable materials back into natural substances."
+    },
+    {
+      "question": "What do we call a layer of underground rock that stores groundwater?",
+      "options": ["Estuary", "Delta", "Aquifer", "Glacier"],
+      "answer": 2,
+      "explanation": "Aquifers supply drinking water to billions of people and must be protected from pollution."
+    },
+    {
+      "question": "According to scientists, what is the biggest driver of biodiversity loss worldwide?",
+      "options": [
+        "Changes in land use and habitat destruction",
+        "Noise from cities",
+        "Tourism",
+        "Light pollution"
+      ],
+      "answer": 0,
+      "explanation": "Turning forests, wetlands and grasslands into farms and cities destroys habitats."
+    },
+    {
+      "question": "What is eutrophication?",
+      "options": [
+        "Water turning into ice",
+        "Excess nutrients causing algae to bloom and oxygen to drop in water",
+        "A way of purifying water",
+        "The movement of tides"
+      ],
+      "answer": 1,
+      "explanation": "Fertiliser runoff feeds algae; when they decay, oxygen runs out and fish die."
+    }
+  ],
+  "riddle": {
+    "text": "I have no lungs, yet I help the whole planet breathe.\nI hold half the world's species beneath my green leaves.\nI drink the sky's carbon and make my own rain,\nbut when chainsaws arrive, I may not grow back again.\nWhat am I?",
+    "hints": [
+      "The largest one on Earth is in South America and is crossed by a giant river.",
+      "I'm hot, humid and very green — a forest that gets a lot of rain."
+    ],
+    "answers": ["rainforest", "rain forest", "tropical forest", "amazon", "forest", "jungle"],
+    "solution": "The rainforest",
+    "explanation": "Tropical rainforests cover a small part of Earth but are home to about half of all land species."
+  },
+  "final": [
+    {
+      "question": "The CO₂ concentration in the atmosphere today is approximately:",
+      "options": ["180 ppm", "280 ppm", "420 ppm", "1,000 ppm"],
+      "answer": 2,
+      "explanation": "Before the Industrial Revolution it was about 280 ppm. Today it is over 420 ppm."
+    },
+    {
+      "question": "What is a carbon footprint?",
+      "options": [
+        "A footprint left in charcoal",
+        "The total greenhouse gases caused by a person, product or activity",
+        "The amount of coal in a country",
+        "A measure of air quality"
+      ],
+      "answer": 1,
+      "explanation": "It includes direct emissions (like driving) and indirect ones (like making the things we buy)."
+    },
+    {
+      "question": "What is the process called when plants release water vapour through their leaves?",
+      "options": ["Respiration", "Transpiration", "Condensation", "Germination"],
+      "answer": 1,
+      "explanation": "Transpiration moves huge amounts of water back into the atmosphere."
+    },
+    {
+      "question": "Which choice best reduces the environmental impact of your clothes?",
+      "options": [
+        "Buying many cheap clothes each season",
+        "Buying fewer, durable items and second-hand clothes",
+        "Washing clothes at 90 °C",
+        "Throwing clothes away after a few uses"
+      ],
+      "answer": 1,
+      "explanation": "Fast fashion uses lots of water and energy. Keeping clothes longer is the greenest option."
+    },
+    {
+      "question": "Why are wetlands important?",
+      "options": [
+        "They filter water",
+        "They store carbon and reduce floods",
+        "They shelter many species",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Wetlands are natural water filters, flood barriers, carbon stores and biodiversity hotspots."
+    },
+    {
+      "question": "What is a keystone species?",
+      "options": [
+        "The largest animal in an ecosystem",
+        "A species whose impact on its ecosystem is much larger than its numbers suggest",
+        "A species that lives in rocks",
+        "A species that is extinct"
+      ],
+      "answer": 1,
+      "explanation": "Remove a keystone species — like wolves or sea otters — and the whole ecosystem changes."
+    },
+    {
+      "question": "What is a main challenge of solar and wind power?",
+      "options": [
+        "They produce a lot of CO₂",
+        "They depend on the weather, so energy storage is needed",
+        "They will run out soon",
+        "They only work at night"
+      ],
+      "answer": 1,
+      "explanation": "Batteries, pumped hydro and smart grids help store energy for when it's dark or calm."
+    },
+    {
+      "question": "What does thawing permafrost release?",
+      "options": [
+        "Fresh oxygen",
+        "Methane and carbon dioxide",
+        "Only clean water",
+        "Helium"
+      ],
+      "answer": 1,
+      "explanation": "Frozen soils hold ancient organic matter. When they thaw, it decomposes and releases greenhouse gases."
+    },
+    {
+      "question": "What is upcycling?",
+      "options": [
+        "Riding a bike uphill",
+        "Turning waste into a product of higher value",
+        "Burning waste for energy",
+        "Sending waste to another country"
+      ],
+      "answer": 1,
+      "explanation": "Turning old jeans into a bag or pallets into furniture are examples of upcycling."
+    },
+    {
+      "question": "What is the IPCC?",
+      "options": [
+        "An international football competition",
+        "A UN body that assesses the science of climate change",
+        "A recycling company",
+        "A type of solar panel"
+      ],
+      "answer": 1,
+      "explanation": "The Intergovernmental Panel on Climate Change reviews thousands of studies to inform governments."
+    }
+  ]
+}

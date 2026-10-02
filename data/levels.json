@@ -1,0 +1,18 @@
+{
+  "schoolYears": [
+    { "id": "5", "label": "5th grade", "level": 1 },
+    { "id": "6", "label": "6th grade", "level": 1 },
+    { "id": "7", "label": "7th grade", "level": 2 },
+    { "id": "8", "label": "8th grade", "level": 2 },
+    { "id": "9", "label": "9th grade", "level": 3 },
+    { "id": "hs1", "label": "1st year of High School", "level": 3 },
+    { "id": "hs2", "label": "2nd year of High School", "level": 4 },
+    { "id": "hs3", "label": "3rd year of High School", "level": 4 }
+  ],
+  "levels": [
+    { "level": 1, "name": "Level 1", "audience": "5th and 6th grade", "color": "leaf" },
+    { "level": 2, "name": "Level 2", "audience": "7th and 8th grade", "color": "water" },
+    { "level": 3, "name": "Level 3", "audience": "9th grade and 1st year of High School", "color": "gold" },
+    { "level": 4, "name": "Level 4", "audience": "2nd and 3rd year of High School", "color": "torch" }
+  ]
+}

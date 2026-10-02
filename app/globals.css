@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background-color: #1a3263;
+}
+
+body {
+  background-color: #1a3263;
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(47, 155, 224, 0.18), transparent 45%),
+    radial-gradient(circle at 90% 100%, rgba(63, 174, 73, 0.15), transparent 45%);
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 10mm;
+  }
+  :root {
+    color-scheme: light;
+  }
+  html,
+  body {
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

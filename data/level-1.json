@@ -1,0 +1,177 @@
+{
+  "level": 1,
+  "test": [
+    {
+      "question": "In Portugal, which recycling bin (ecoponto) is used for paper and cardboard?",
+      "options": ["Green", "Blue", "Yellow", "Red"],
+      "answer": 1,
+      "explanation": "Paper and cardboard go in the blue bin. Yellow is for plastic and metal, green is for glass."
+    },
+    {
+      "question": "What should you do while brushing your teeth to save water?",
+      "options": ["Leave the tap running", "Use hot water", "Turn off the tap", "Brush faster"],
+      "answer": 2,
+      "explanation": "Turning off the tap while brushing can save up to 12 litres of water every time!"
+    },
+    {
+      "question": "Which of these is a renewable source of energy?",
+      "options": ["The Sun", "Coal", "Oil", "Petrol"],
+      "answer": 0,
+      "explanation": "The Sun will keep shining for billions of years, so solar energy never runs out."
+    },
+    {
+      "question": "What do plants need to make their own food?",
+      "options": ["Sugar and salt", "Darkness and cold", "Plastic and soil", "Sunlight, water and air"],
+      "answer": 3,
+      "explanation": "Plants use sunlight, water and carbon dioxide from the air to make food. This is called photosynthesis."
+    },
+    {
+      "question": "Where should you put an empty glass jar?",
+      "options": ["In the blue bin", "In the green bin", "In the yellow bin", "On the ground"],
+      "answer": 1,
+      "explanation": "Glass goes in the green bin, and it can be recycled again and again."
+    },
+    {
+      "question": "Which action saves energy at home?",
+      "options": [
+        "Leaving the TV on all night",
+        "Opening the fridge often",
+        "Turning off the lights when you leave a room",
+        "Charging a phone that is already full"
+      ],
+      "answer": 2,
+      "explanation": "Lights left on in empty rooms waste electricity. Switch them off!"
+    },
+    {
+      "question": "What does the word \"biodiversity\" mean?",
+      "options": [
+        "The variety of all living things",
+        "A type of recycling bin",
+        "A kind of plastic",
+        "A big storm"
+      ],
+      "answer": 0,
+      "explanation": "Biodiversity is the variety of plants, animals and other living things on Earth."
+    },
+    {
+      "question": "Your school is 10 minutes away. What is the greenest way to get there?",
+      "options": ["By car", "By motorbike", "By taxi", "Walking or cycling"],
+      "answer": 3,
+      "explanation": "Walking and cycling produce no pollution and are great for your health too."
+    },
+    {
+      "question": "How long can a plastic bottle take to break down in nature?",
+      "options": ["One week", "One month", "Hundreds of years", "One year"],
+      "answer": 2,
+      "explanation": "A plastic bottle can take around 450 years to break down. That is why recycling matters!"
+    },
+    {
+      "question": "Why are bees so important?",
+      "options": [
+        "They make the weather sunny",
+        "They pollinate the plants that give us food",
+        "They clean the rivers",
+        "They eat plastic"
+      ],
+      "answer": 1,
+      "explanation": "Bees carry pollen from flower to flower, which helps fruits and vegetables grow."
+    }
+  ],
+  "riddle": {
+    "text": "I fall from the clouds but I am not snow,\nI fill up the rivers wherever they flow.\nYou drink me, you wash with me, all through the day —\nso please close the tap and don't throw me away!\nWhat am I?",
+    "hints": [
+      "I cover about 71% of our planet's surface.",
+      "Plants, animals and people all need me to live. My chemical formula is H₂O."
+    ],
+    "answers": ["water", "rain", "rainwater", "h2o"],
+    "solution": "Water",
+    "explanation": "Water is precious: only a tiny part of all the water on Earth is fresh water we can drink."
+  },
+  "final": [
+    {
+      "question": "What are the \"3 Rs\" of sustainability?",
+      "options": [
+        "Run, Rest, Read",
+        "Reduce, Reuse, Recycle",
+        "Rain, River, Rock",
+        "Red, Round, Rough"
+      ],
+      "answer": 1,
+      "explanation": "Reduce what you use, Reuse what you can, and Recycle the rest."
+    },
+    {
+      "question": "Which usually uses less water?",
+      "options": [
+        "A full bath",
+        "A short shower",
+        "Both use the same",
+        "Washing the car with a hose"
+      ],
+      "answer": 1,
+      "explanation": "A 5-minute shower uses roughly half the water of a full bath."
+    },
+    {
+      "question": "Which gas do trees take in from the air?",
+      "options": ["Oxygen", "Helium", "Carbon dioxide", "Nitrogen"],
+      "answer": 2,
+      "explanation": "Trees absorb carbon dioxide and release the oxygen we breathe."
+    },
+    {
+      "question": "Which item goes in the yellow recycling bin?",
+      "options": ["A newspaper", "A glass bottle", "Banana peel", "An empty drink can"],
+      "answer": 3,
+      "explanation": "The yellow bin is for plastic and metal packaging, like cans and plastic bottles."
+    },
+    {
+      "question": "What is compost made from?",
+      "options": [
+        "Food scraps and garden waste",
+        "Old batteries",
+        "Plastic bags",
+        "Broken glass"
+      ],
+      "answer": 0,
+      "explanation": "Peels, leaves and other natural waste turn into rich soil called compost."
+    },
+    {
+      "question": "Which sea animal often mistakes plastic bags for jellyfish and eats them?",
+      "options": ["Shark", "Sea turtle", "Octopus", "Crab"],
+      "answer": 1,
+      "explanation": "Sea turtles love to eat jellyfish, and floating plastic bags look very similar."
+    },
+    {
+      "question": "How much of all the water on Earth is fresh water?",
+      "options": ["About half", "About 3%", "About 90%", "All of it"],
+      "answer": 1,
+      "explanation": "Only about 3% is fresh water, and most of it is frozen in ice. Every drop counts!"
+    },
+    {
+      "question": "Which light bulb uses the least energy?",
+      "options": ["Old incandescent bulb", "Halogen bulb", "LED bulb", "They all use the same"],
+      "answer": 2,
+      "explanation": "LED bulbs use up to 80% less energy and last much longer."
+    },
+    {
+      "question": "What is the main cause of climate change?",
+      "options": [
+        "Planting too many trees",
+        "Burning coal, oil and gas",
+        "Recycling paper",
+        "Riding bicycles"
+      ],
+      "answer": 1,
+      "explanation": "Burning fossil fuels releases gases that trap heat and warm up our planet."
+    },
+    {
+      "question": "What is a habitat?",
+      "options": [
+        "A type of food",
+        "A recycling machine",
+        "The natural home of a plant or animal",
+        "A kind of weather"
+      ],
+      "answer": 2,
+      "explanation": "A habitat gives living things food, water and shelter. Protecting habitats protects biodiversity."
+    }
+  ]
+}

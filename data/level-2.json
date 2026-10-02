@@ -1,0 +1,182 @@
+{
+  "level": 2,
+  "test": [
+    {
+      "question": "What is the greenhouse effect?",
+      "options": [
+        "Growing vegetables inside a glass house",
+        "Gases in the atmosphere trapping the Sun's heat",
+        "Painting buildings green",
+        "The Moon blocking sunlight"
+      ],
+      "answer": 1,
+      "explanation": "Gases like CO₂ keep heat near the Earth. More of them means a warmer planet."
+    },
+    {
+      "question": "Which of these is a fossil fuel?",
+      "options": ["Wind", "Wood pellets", "Coal", "Sunlight"],
+      "answer": 2,
+      "explanation": "Coal formed over millions of years from ancient plants. Once we burn it, it is gone."
+    },
+    {
+      "question": "In the water cycle, what is it called when water vapour cools and forms clouds?",
+      "options": ["Evaporation", "Condensation", "Precipitation", "Infiltration"],
+      "answer": 1,
+      "explanation": "Condensation turns water vapour into tiny droplets that form clouds."
+    },
+    {
+      "question": "Which of these energy sources is NOT renewable?",
+      "options": ["Wind", "Solar", "Hydropower", "Natural gas"],
+      "answer": 3,
+      "explanation": "Natural gas is a fossil fuel. Wind, solar and hydropower are renewable."
+    },
+    {
+      "question": "In the \"3 Rs\", what does \"Reduce\" mean?",
+      "options": [
+        "Using and buying less in the first place",
+        "Making things smaller with a machine",
+        "Throwing things away faster",
+        "Recycling twice"
+      ],
+      "answer": 0,
+      "explanation": "Reduce is the most important R: the best waste is the waste we never create."
+    },
+    {
+      "question": "Which way of travelling 10 km produces the most CO₂ per person?",
+      "options": ["Bicycle", "Train", "Full bus", "Car with only the driver"],
+      "answer": 3,
+      "explanation": "A car carrying one person spreads all its emissions over a single passenger."
+    },
+    {
+      "question": "What is an ecosystem?",
+      "options": [
+        "A computer program about nature",
+        "Living things interacting with each other and their environment",
+        "A single type of animal",
+        "A recycling factory"
+      ],
+      "answer": 1,
+      "explanation": "Forests, rivers and coral reefs are all ecosystems full of connections."
+    },
+    {
+      "question": "What happens to coral reefs when the ocean becomes too warm?",
+      "options": [
+        "They grow faster",
+        "They turn into rocks instantly",
+        "They lose their colour and can die (bleaching)",
+        "Nothing happens"
+      ],
+      "answer": 2,
+      "explanation": "Heat stress makes corals expel the algae that feed them, so they turn white."
+    },
+    {
+      "question": "Which material can be recycled again and again without losing quality?",
+      "options": ["Glass", "Paper", "Plastic bags", "Polystyrene"],
+      "answer": 0,
+      "explanation": "Glass can be melted and reshaped endlessly. Paper fibres get shorter each time."
+    },
+    {
+      "question": "What is deforestation?",
+      "options": [
+        "Planting new forests",
+        "Clearing forests on a large scale",
+        "Studying trees",
+        "Turning wood into paper"
+      ],
+      "answer": 1,
+      "explanation": "Deforestation destroys habitats and releases the carbon stored in trees."
+    }
+  ],
+  "riddle": {
+    "text": "I'm born from the things that you throw in the bin:\npeels, leaves and coffee grounds — all welcome in.\nWorms are my workers, the soil is my friend,\nI turn yesterday's leftovers into a new start in the end.\nWhat am I?",
+    "hints": [
+      "Gardeners and farmers love me because I make plants grow strong.",
+      "You can make me at home in a special bin, and I cut down the waste that goes to landfill."
+    ],
+    "answers": ["compost", "composting", "humus", "fertilizer", "fertiliser"],
+    "solution": "Compost",
+    "explanation": "About a third of household waste is organic. Composting turns it into natural fertiliser instead of landfill."
+  },
+  "final": [
+    {
+      "question": "Which greenhouse gas is released most by human activities?",
+      "options": ["Oxygen", "Carbon dioxide (CO₂)", "Helium", "Argon"],
+      "answer": 1,
+      "explanation": "CO₂ from burning fossil fuels is the largest contributor to global warming."
+    },
+    {
+      "question": "How many Sustainable Development Goals (SDGs) did the United Nations adopt in 2015?",
+      "options": ["5", "10", "17", "25"],
+      "answer": 2,
+      "explanation": "There are 17 SDGs to reach by 2030. This olympiad supports SDG 4: Quality Education."
+    },
+    {
+      "question": "How does a hydroelectric dam produce electricity?",
+      "options": [
+        "By burning water",
+        "Falling water spins turbines",
+        "By heating water with coal",
+        "With solar panels on the dam"
+      ],
+      "answer": 1,
+      "explanation": "The energy of moving water turns turbines connected to generators."
+    },
+    {
+      "question": "What are microplastics?",
+      "options": [
+        "Plastic made by microbes",
+        "Very small toys",
+        "Plastic pieces smaller than 5 mm",
+        "A type of biodegradable plastic"
+      ],
+      "answer": 2,
+      "explanation": "Microplastics are found everywhere, from oceans to the food we eat."
+    },
+    {
+      "question": "About how much water is needed to produce one cotton T-shirt?",
+      "options": ["2 litres", "27 litres", "270 litres", "2,700 litres"],
+      "answer": 3,
+      "explanation": "Growing cotton is very thirsty — about 2,700 litres, what one person drinks in 2.5 years!"
+    },
+    {
+      "question": "Which of these releases large amounts of methane, a powerful greenhouse gas?",
+      "options": ["Solar panels", "Cattle farming and landfills", "Wind turbines", "Bicycles"],
+      "answer": 1,
+      "explanation": "Cows produce methane when digesting food, and rotting waste in landfills does too."
+    },
+    {
+      "question": "What is an invasive species?",
+      "options": [
+        "A species brought to a new place where it harms local nature",
+        "A species that lives only in one place",
+        "An endangered species",
+        "A species that migrates every year"
+      ],
+      "answer": 0,
+      "explanation": "Invasive species can outcompete native plants and animals and reduce biodiversity."
+    },
+    {
+      "question": "Why does melting Arctic ice make global warming even faster?",
+      "options": [
+        "Ice produces CO₂ when it melts",
+        "Dark ocean water absorbs more sunlight than white ice",
+        "Melted ice makes the wind stronger",
+        "It does not affect warming"
+      ],
+      "answer": 1,
+      "explanation": "White ice reflects sunlight back to space. Dark water absorbs it and warms up more."
+    },
+    {
+      "question": "On the EU energy label, which letter marks the most energy-efficient appliances?",
+      "options": ["A", "D", "G", "Z"],
+      "answer": 0,
+      "explanation": "The scale goes from A (most efficient) to G (least efficient)."
+    },
+    {
+      "question": "Which food usually has the largest carbon footprint per kilogram?",
+      "options": ["Lentils", "Potatoes", "Beef", "Chicken"],
+      "answer": 2,
+      "explanation": "Beef needs lots of land, feed and water, and cows release methane."
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "level": 4,
+  "test": [
+    {
+      "question": "What is the difference between weather and climate?",
+      "options": [
+        "There is no difference",
+        "Weather is short-term conditions; climate is the long-term average (30+ years)",
+        "Climate changes every day; weather never changes",
+        "Weather only refers to temperature"
+      ],
+      "answer": 1,
+      "explanation": "A cold day doesn't disprove global warming — climate is about long-term trends."
+    },
+    {
+      "question": "What does \"net zero\" emissions mean?",
+      "options": [
+        "Emitting no gases at all",
+        "Balancing the greenhouse gases emitted with those removed from the atmosphere",
+        "Paying a fine for every tonne of CO₂",
+        "Stopping all industry"
+      ],
+      "answer": 1,
+      "explanation": "Remaining emissions must be offset by removals such as forests or carbon capture. The EU aims for 2050."
+    },
+    {
+      "question": "Which sector is the largest source of global greenhouse gas emissions?",
+      "options": [
+        "Energy (electricity, heat and transport)",
+        "Waste",
+        "Agriculture",
+        "Industrial chemical processes"
+      ],
+      "answer": 0,
+      "explanation": "Energy use accounts for roughly three quarters of global emissions."
+    },
+    {
+      "question": "In climate science, what is a \"tipping point\"?",
+      "options": [
+        "The tip of a melting glacier",
+        "A threshold beyond which change becomes self-reinforcing and hard to reverse",
+        "The hottest day of the year",
+        "A point on a weather map"
+      ],
+      "answer": 1,
+      "explanation": "Examples include Amazon dieback and the collapse of the Greenland ice sheet."
+    },
+    {
+      "question": "How does the EU Emissions Trading System (EU ETS) work?",
+      "options": [
+        "It bans all polluting companies",
+        "It sets a cap on emissions and companies trade allowances",
+        "It gives free electricity to citizens",
+        "It taxes only cars"
+      ],
+      "answer": 1,
+      "explanation": "This \"cap and trade\" system makes polluting cost money, and the cap shrinks every year."
+    },
+    {
+      "question": "What is \"green hydrogen\"?",
+      "options": [
+        "Hydrogen that is coloured green",
+        "Hydrogen made from natural gas",
+        "Hydrogen produced by electrolysis of water using renewable electricity",
+        "Hydrogen found in plants"
+      ],
+      "answer": 2,
+      "explanation": "It could help decarbonise heavy industry, shipping and long-distance transport."
+    },
+    {
+      "question": "What is a Life Cycle Assessment (LCA)?",
+      "options": [
+        "A medical exam",
+        "An analysis of a product's environmental impact from raw materials to disposal",
+        "A study of animal life spans",
+        "A bicycle safety test"
+      ],
+      "answer": 1,
+      "explanation": "LCA looks at extraction, manufacturing, transport, use and end of life."
+    },
+    {
+      "question": "When is a region said to be under \"water stress\"?",
+      "options": [
+        "When it rains too much",
+        "When water demand exceeds the available supply",
+        "When water is too salty to swim in",
+        "When rivers freeze"
+      ],
+      "answer": 1,
+      "explanation": "Southern Europe, including parts of Portugal, faces increasing water stress due to droughts."
+    },
+    {
+      "question": "What is greenwashing?",
+      "options": [
+        "Washing clothes with eco detergent",
+        "Making misleading claims that a product or company is environmentally friendly",
+        "Cleaning parks and gardens",
+        "Painting factories green"
+      ],
+      "answer": 1,
+      "explanation": "Vague labels like \"eco\" or \"natural\" without evidence can be greenwashing. Stay critical!"
+    },
+    {
+      "question": "Why do many scientists say we are in a \"sixth mass extinction\"?",
+      "options": [
+        "An asteroid recently hit Earth",
+        "Species are disappearing far faster than the natural rate, mainly due to humans",
+        "Dinosaurs are returning",
+        "Ice ages are becoming more frequent"
+      ],
+      "answer": 1,
+      "explanation": "Current extinction rates are estimated to be tens to hundreds of times higher than the natural background rate."
+    }
+  ],
+  "riddle": {
+    "text": "I'm a footprint left by everyone, yet no sand or mud ever holds me.\nI'm measured in tonnes, not in centimetres.\nEvery flight, every burger and every new gadget makes me bigger,\nbut smart choices can make me shrink.\nWhat am I?",
+    "hints": [
+      "I'm counted in tonnes of CO₂ equivalent per person per year.",
+      "My name combines a chemical element (atomic number 6) with something you leave when you walk."
+    ],
+    "answers": ["carbon footprint", "co2 footprint", "carbonfootprint", "footprint of carbon"],
+    "solution": "A carbon footprint",
+    "explanation": "The average EU citizen emits about 7 tonnes of CO₂e per year. To meet the Paris goals it should approach 2 tonnes."
+  },
+  "final": [
+    {
+      "question": "Over 100 years, roughly how much more warming does methane cause than the same mass of CO₂?",
+      "options": ["The same", "About 2 times", "About 28 times", "About 1,000 times"],
+      "answer": 2,
+      "explanation": "Methane's global warming potential (GWP100) is around 27–30, though it stays in the air for a shorter time."
+    },
+    {
+      "question": "What is the \"rebound effect\" (Jevons paradox)?",
+      "options": [
+        "Recycled materials bouncing back into use",
+        "Efficiency gains leading to more consumption, cancelling part of the savings",
+        "Ice sheets growing back in winter",
+        "Prices falling after a crisis"
+      ],
+      "answer": 1,
+      "explanation": "E.g. a more efficient car may lead people to drive more. Efficiency must go hand in hand with sufficiency."
+    },
+    {
+      "question": "Scientists worry that melting Greenland ice could weaken the AMOC. What is it?",
+      "options": [
+        "A European climate law",
+        "A system of Atlantic Ocean currents that carries heat northwards",
+        "A type of glacier",
+        "A satellite that measures CO₂"
+      ],
+      "answer": 1,
+      "explanation": "The Atlantic Meridional Overturning Circulation keeps Europe's climate mild. Fresh meltwater can slow it."
+    },
+    {
+      "question": "For a company, what are \"Scope 3\" emissions?",
+      "options": [
+        "Emissions from its own factories",
+        "Emissions from the electricity it buys",
+        "Indirect emissions across its whole value chain, from suppliers to customers",
+        "Emissions from its employees' homes only"
+      ],
+      "answer": 2,
+      "explanation": "Scope 3 often makes up most of a company's footprint, which is why it is so hard to reduce."
+    },
+    {
+      "question": "Which is a nature-based solution against coastal flooding?",
+      "options": [
+        "Building more car parks on the beach",
+        "Restoring dunes, salt marshes and mangroves",
+        "Removing all coastal vegetation",
+        "Dredging sand from beaches"
+      ],
+      "answer": 1,
+      "explanation": "Healthy coastal ecosystems absorb wave energy, store carbon and support biodiversity."
+    },
+    {
+      "question": "How many \"planetary boundaries\" define the safe operating space for humanity?",
+      "options": ["3", "5", "9", "17"],
+      "answer": 2,
+      "explanation": "There are 9 boundaries, such as climate change and biosphere integrity. Six were found to be crossed in 2023."
+    },
+    {
+      "question": "Which policy directly puts a price on emitting CO₂ to encourage reductions?",
+      "options": ["A carbon tax", "A fuel subsidy", "A plastic bag giveaway", "A speed limit"],
+      "answer": 0,
+      "explanation": "Carbon taxes and emissions trading make polluters pay for the damage they cause."
+    },
+    {
+      "question": "What is a major environmental drawback of seawater desalination?",
+      "options": [
+        "It makes water too sweet",
+        "High energy use and salty brine discharged back into the sea",
+        "It removes all fish from the ocean",
+        "It only works in winter"
+      ],
+      "answer": 1,
+      "explanation": "Desalination can help in droughts, but needs renewable energy and careful brine management."
+    },
+    {
+      "question": "What is the \"embodied carbon\" of a building?",
+      "options": [
+        "The carbon in the air inside it",
+        "Emissions from producing, transporting and building with its materials",
+        "Emissions from heating it in winter",
+        "The amount of wood in its furniture"
+      ],
+      "answer": 1,
+      "explanation": "Cement and steel are carbon-intensive, so renovating is often greener than rebuilding."
+    },
+    {
+      "question": "This olympiad supports which UN Sustainable Development Goal, \"Quality Education\"?",
+      "options": ["SDG 4", "SDG 6", "SDG 13", "SDG 15"],
+      "answer": 0,
+      "explanation": "SDG 4 — because education is how we prepare a generation to protect the planet."
+    }
+  ]
+}
