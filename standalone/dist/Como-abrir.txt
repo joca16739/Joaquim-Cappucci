@@ -10,4 +10,3 @@ Não é preciso instalar nada nem ter internet. Com internet, o site usa as font
 sem internet, usa as fontes do computador.
 
 O progresso da competição fica guardado no navegador de cada computador.
-Para imprimir o certificado: Ficheiro → Imprimir (⌘P).
