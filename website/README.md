@@ -21,9 +21,10 @@ npm run build    # writes the static site to out/
      the For Schools section, which shows the placeholder.
    - `date` – when the Olympiad takes place (`[DATE]`, shown in the FAQ).
    - `email` – contact address (`[EMAIL]`, shown in the footer).
-2. **Add the logos.** Put the files in `public/` and replace the `<ImagePlaceholder … />` elements in
-   `app/page.tsx` and `components/Nav.tsx` with `<img src="/your-logo.png" alt="…" />`. Placeholders:
-   Sustainable Olympiad logo (hero, menu, footer) and PORTO talks logo (About card, footer).
+2. **Add the official logo** as `public/logo.png`. It is used in the navbar, large in the hero, in the
+   footer and as the favicon, always on a white circle so its white background looks clean on navy.
+   Until the file exists, a placeholder is shown instead. The PORTO talks logo is still a placeholder
+   (About card and footer).
 
 ## Deploying on Vercel
 

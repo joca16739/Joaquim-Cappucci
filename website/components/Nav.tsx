@@ -3,7 +3,7 @@
 import { Menu, X } from "lucide-react";
 import { useRef } from "react";
 import { nav, registerHref } from "@/app/site";
-import ImagePlaceholder from "./ImagePlaceholder";
+import SiteLogo from "./SiteLogo";
 
 export default function Nav() {
   const menu = useRef<HTMLDetailsElement>(null);
@@ -11,9 +11,9 @@ export default function Nav() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy/90 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-4">
+      <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4">
         <a href="#top" className="flex items-center gap-2.5">
-          <ImagePlaceholder label="Logo" className="w-10 !p-0 text-[0.5rem]" />
+          <SiteLogo className="w-10" ring="ring-1 ring-white/30" priority />
           <span className="whitespace-nowrap font-display text-xl font-extrabold uppercase leading-none tracking-wide">
             Sustainable <span className="text-gold">Olympiad</span>
           </span>
@@ -25,7 +25,7 @@ export default function Nav() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold text-white/80 transition hover:bg-white/10 hover:text-white"
+                  className="whitespace-nowrap rounded-full px-2.5 py-2 text-sm font-semibold text-white/80 transition hover:bg-white/10 hover:text-white"
                 >
                   {item.label}
                 </a>

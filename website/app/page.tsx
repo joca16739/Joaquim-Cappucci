@@ -21,6 +21,7 @@ import {
 import Button from "@/components/Button";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import Nav from "@/components/Nav";
+import SiteLogo from "@/components/SiteLogo";
 import SectionHeading from "@/components/SectionHeading";
 import { isPlaceholder, levels, phases, registerHref, site } from "./site";
 
@@ -43,46 +44,40 @@ function Lanes({ className = "" }: { className?: string }) {
 function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
-      {/* Track lanes sweeping behind the hero */}
-      <div aria-hidden className="pointer-events-none absolute -right-40 top-10 h-[46rem] w-[46rem] rounded-full border-[14px] border-leaf/15" />
-      <div aria-hidden className="pointer-events-none absolute -right-28 top-24 h-[38rem] w-[38rem] rounded-full border-[14px] border-water/15" />
-      <div aria-hidden className="pointer-events-none absolute -right-16 top-[8.5rem] h-[30rem] w-[30rem] rounded-full border-[14px] border-gold/15" />
+      {/* Track lanes circling the logo */}
+      <div aria-hidden className="pointer-events-none absolute left-1/2 top-4 h-[44rem] w-[44rem] -translate-x-1/2 rounded-full border-[14px] border-leaf/15" />
+      <div aria-hidden className="pointer-events-none absolute left-1/2 top-16 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full border-[14px] border-water/15" />
+      <div aria-hidden className="pointer-events-none absolute left-1/2 top-28 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full border-[14px] border-gold/15" />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 pb-20 pt-14 sm:pt-20 lg:grid-cols-[1.25fr_1fr] lg:pb-28">
-        <div>
-          <p className="inline-flex flex-wrap items-center gap-x-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-sm font-semibold text-white/85">
-            <span className="h-2 w-2 rounded-full bg-leaf" />
-            PORTO talks · The world as seen by the students
-          </p>
-          <h1 className="mt-6 font-display text-[3.6rem] font-extrabold uppercase leading-[0.85] tracking-tight sm:text-8xl lg:text-[7.5rem]">
-            Sustainable
-            <span className="block italic text-gold">Olympiad</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-xl font-medium leading-snug text-white/90 sm:text-2xl">
-            Quality Education for a Sustainable Future
-          </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button href={registerHref}>Register your school</Button>
-            <Button href="#how-it-works" variant="outline">
-              How it works
-            </Button>
-          </div>
-          <p className="mt-8 inline-flex items-center gap-3 text-sm text-white/70">
-            <span className="rounded-md bg-torch px-2 py-1 font-display text-base font-bold leading-none">SDG 4</span>
-            Quality Education
-          </p>
-        </div>
-
-        <div className="flex justify-center lg:justify-end">
-          <div className="relative">
-            <div aria-hidden className="absolute inset-0 -m-4 rounded-full bg-gradient-to-br from-gold/40 via-water/20 to-leaf/40 blur-2xl" />
-            <div className="relative rounded-full bg-gradient-to-br from-gold via-[#f7d27a] to-[#c98f12] p-2 shadow-2xl">
-              <div className="rounded-full bg-navy-deep p-3">
-                <ImagePlaceholder label="Sustainable Olympiad logo" className="w-56 sm:w-72" />
-              </div>
-            </div>
+      <div className="relative mx-auto flex max-w-4xl flex-col items-center px-4 pb-20 pt-12 text-center sm:pt-16 lg:pb-28">
+        <div className="relative">
+          <div aria-hidden className="absolute inset-0 -m-6 rounded-full bg-gradient-to-br from-gold/45 via-water/25 to-leaf/45 blur-2xl" />
+          <div className="relative rounded-full bg-gradient-to-br from-gold via-[#f7d27a] to-[#c98f12] p-1.5 shadow-2xl">
+            <SiteLogo className="w-44 sm:w-56" ring="" priority />
           </div>
         </div>
+
+        <p className="mt-8 inline-flex items-center justify-center gap-x-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-sm font-semibold text-white/85">
+          <span className="hidden h-2 w-2 shrink-0 rounded-full bg-leaf sm:inline-block" />
+          PORTO talks · The world as seen by the students
+        </p>
+        <h1 className="mt-5 font-display text-[3.6rem] font-extrabold uppercase leading-[0.85] tracking-tight sm:text-8xl lg:text-[7.5rem]">
+          Sustainable
+          <span className="block italic text-gold">Olympiad</span>
+        </h1>
+        <p className="mt-6 max-w-xl text-xl font-medium leading-snug text-white/90 sm:text-2xl">
+          Quality Education for a Sustainable Future
+        </p>
+        <div className="mt-9 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
+          <Button href={registerHref}>Register your school</Button>
+          <Button href="#how-it-works" variant="outline">
+            How it works
+          </Button>
+        </div>
+        <p className="mt-8 inline-flex items-center gap-3 text-sm text-white/70">
+          <span className="rounded-md bg-torch px-2 py-1 font-display text-base font-bold leading-none">SDG 4</span>
+          Quality Education
+        </p>
       </div>
       <Lanes />
     </section>
@@ -427,7 +422,7 @@ function Footer() {
       <Lanes />
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-10 text-center md:flex-row md:text-left">
         <div className="flex items-center gap-3">
-          <ImagePlaceholder label="Olympiad logo" className="w-16 text-[0.55rem]" />
+          <SiteLogo className="w-16" />
           <ImagePlaceholder label="PORTO talks logo" shape="rect" className="h-16 w-28 text-[0.55rem]" />
         </div>
         <p className="text-sm text-white/75 md:flex-1">

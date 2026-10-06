@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Sustainable Olympiad",
   description:
     "Quality Education for a Sustainable Future. A sustainability and environmental knowledge competition for students, by PORTO talks.",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export const viewport: Viewport = {

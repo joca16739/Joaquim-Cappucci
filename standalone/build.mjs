@@ -57,6 +57,13 @@ const html = fs.readFileSync(path.join(out, "index.html"), "utf8");
 const cssDir = path.join(out, "_next/static/css");
 const siteCss = fs.readdirSync(cssDir).sort().map((f) => fs.readFileSync(path.join(cssDir, f), "utf8")).join("");
 const fontHref = html.match(/<link rel="stylesheet" href="(https:\/\/fonts\.googleapis\.com[^"]+)"/)[1];
+// Embed the logo so the file works from disk; without it, show the placeholder box.
+const logoPath = path.join(root, "website/public/logo.png");
+const logoSrc = fs.existsSync(logoPath)
+  ? `data:image/png;base64,${fs.readFileSync(logoPath).toString("base64")}`
+  : null;
+const withLogo = (s) => (logoSrc ? s.replaceAll('"/logo.png"', `"${logoSrc}"`) : s);
+const iconLinks = logoSrc ? `<link rel="icon" href="${logoSrc}">\n<link rel="apple-touch-icon" href="${logoSrc}">` : "";
 const siteBody = html
   .match(/<body[^>]*>([\s\S]*)<\/body>/)[1]
   .replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, "") // the static page needs no Next.js runtime
@@ -66,10 +73,17 @@ fs.writeFileSync(
   documentFrom({
     title: "Sustainable Olympiad",
     head: `<meta name="theme-color" content="#0b2f5e">
+${iconLinks}
 <link rel="stylesheet" href="${fontHref}">
 <style>${siteCss}</style>`,
-    body: `<div class="font-sans">${siteBody}</div>
+    body: `<div class="font-sans">${withLogo(siteBody)}</div>
 <script>
+  // No logo file embedded: swap broken logo images for a placeholder.
+  document.querySelectorAll('img[src="/logo.png"]').forEach(function (img) {
+    var box = img.parentElement;
+    box.className = box.className.replace("bg-white", "border-2 border-dashed border-white/40 bg-navy-deep");
+    box.innerHTML = '<span style="font-size:.55rem;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,.6)">LOGO</span>';
+  });
   // Close the mobile menu after choosing a section.
   document.querySelectorAll("#mobile-menu a").forEach(function (a) {
     a.addEventListener("click", function () { document.getElementById("mobile-menu").removeAttribute("open"); });
@@ -77,5 +91,10 @@ fs.writeFileSync(
 </script>`,
   }),
 );
+
+/* ---------- ZIP with both pages and the read-me ---------- */
+const zip = path.join(dist, "Sustainable-Olympiad.zip");
+fs.rmSync(zip, { force: true });
+execFileSync("zip", ["-q", "-X", zip, "Sustainable-Olympiad-Website.html", "Sustainable-Olympiad-Competition.html", "Como-abrir.txt"], { cwd: dist });
 
 for (const f of fs.readdirSync(dist)) console.log("wrote", path.join("standalone/dist", f));
