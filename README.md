@@ -71,3 +71,7 @@ lib/            Types, data access, scoring rules, progress store, step guard
 
 Scoring rules are in `lib/scoring.ts`; colours (navy `#1a3263`, leaf green, water blue, gold, torch red)
 are in `tailwind.config.ts`.
+
+## Official website
+
+The Olympiad's public one-page website lives in [`website/`](website/README.md), a separate Next.js app.
