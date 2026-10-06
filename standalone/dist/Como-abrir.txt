@@ -1,0 +1,13 @@
+SUSTAINABLE OLYMPIAD – como abrir
+
+1. Descomprime o ZIP (duplo clique no Mac).
+2. Faz duplo clique num dos ficheiros:
+   - Sustainable-Olympiad-Website.html      → o site oficial da Olimpíada
+   - Sustainable-Olympiad-Competition.html  → a competição (teste, adivinha, teste final, certificado)
+3. Abre no navegador (Safari, Chrome, Edge, Firefox) em qualquer computador: Mac, Windows ou Linux.
+
+Não é preciso instalar nada nem ter internet. Com internet, o site usa as fontes oficiais;
+sem internet, usa as fontes do computador.
+
+O progresso da competição fica guardado no navegador de cada computador.
+Para imprimir o certificado: Ficheiro → Imprimir (⌘P).

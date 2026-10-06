@@ -14,18 +14,18 @@ export default function Nav() {
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-4">
         <a href="#top" className="flex items-center gap-2.5">
           <ImagePlaceholder label="Logo" className="w-10 !p-0 text-[0.5rem]" />
-          <span className="font-display text-xl font-extrabold uppercase leading-none tracking-wide">
+          <span className="whitespace-nowrap font-display text-xl font-extrabold uppercase leading-none tracking-wide">
             Sustainable <span className="text-gold">Olympiad</span>
           </span>
         </a>
 
         <nav aria-label="Main" className="ml-auto hidden lg:block">
-          <ul className="flex items-center gap-1">
+          <ul className="flex items-center gap-0.5 xl:gap-1">
             {nav.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="rounded-full px-3 py-2 text-sm font-semibold text-white/80 transition hover:bg-white/10 hover:text-white"
+                  className="whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold text-white/80 transition hover:bg-white/10 hover:text-white"
                 >
                   {item.label}
                 </a>

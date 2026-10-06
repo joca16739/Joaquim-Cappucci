@@ -1,0 +1,430 @@
+<title>Sustainable Olympiad</title>
+<style>
+  /* Single dark look by design: navy ground, white text, laurel/water/gold/torch accents. */
+  :root {
+    --navy: #1a3263;
+    --navy-dark: #12244a;
+    --navy-light: #24427f;
+    --leaf: #3fae49;
+    --water: #2f9be0;
+    --gold: #f2b632;
+    --torch: #e03a3e;
+    --ink: #ffffff;
+    color-scheme: dark;
+  }
+  html, body { background: var(--navy); color: var(--ink); }
+  body {
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(47, 155, 224, 0.18), transparent 45%),
+      radial-gradient(circle at 90% 100%, rgba(63, 174, 73, 0.15), transparent 45%);
+    min-height: 100%;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2 { text-wrap: balance; }
+  .tabular { font-variant-numeric: tabular-nums; }
+  button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+<style>__TAILWIND__</style>
+
+<div id="app"></div>
+
+<script>
+const DATA = __DATA__;
+const KEY = "sustainable-olympiad:progress";
+const RIDDLE_POINTS = [10, 7, 4];
+const RIDDLE_MAX = 10;
+const TEST_PTS = 1, FINAL_PTS = 2;
+const empty = { studentName: "", schoolYearId: null, level: null, test: null, riddle: null, final: null, completedAt: null };
+
+let P = load();
+let ui = { screen: "home" };
+const app = document.getElementById("app");
+
+function load() {
+  try { const s = localStorage.getItem(KEY); if (s) return { ...empty, ...JSON.parse(s) }; } catch (e) {}
+  return { ...empty };
+}
+function save() { try { localStorage.setItem(KEY, JSON.stringify(P)); } catch (e) {} }
+function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
+
+const levelInfo = l => DATA.levels.find(x => x.level === l);
+const schoolYear = id => DATA.schoolYears.find(y => y.id === id);
+const content = l => DATA.content[l];
+function currentStep() {
+  if (!P.level) return "level";
+  if (!P.test) return "test";
+  if (!P.riddle) return "riddle";
+  if (!P.final) return "final";
+  return "results";
+}
+function total() {
+  return [P.test, P.riddle, P.final].filter(Boolean).reduce((a, r) => ({ score: a.score + r.score, max: a.max + r.max }), { score: 0, max: 0 });
+}
+function medalFor(pct) {
+  if (pct >= 85) return { label: "Gold", cls: "text-gold" };
+  if (pct >= 65) return { label: "Silver", cls: "text-slate-200" };
+  if (pct >= 40) return { label: "Bronze", cls: "text-amber-600" };
+  return { label: "Participant", cls: "text-leaf" };
+}
+function norm(s) {
+  return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/₂/g, "2")
+    .replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim()
+    .replace(/^(a|an|the|it is|its|it s|i am|im|i m)\s+/, "").replace(/^(a|an|the)\s+/, "");
+}
+function riddleCorrect(input, accepted) {
+  const g = norm(input);
+  if (!g) return false;
+  return accepted.some(a => { const t = norm(a); return g === t || (" " + g + " ").includes(" " + t + " "); });
+}
+function shuffle(q) {
+  if (q.options.some(o => /^(all|none) of the above/i.test(o))) return q;
+  const order = q.options.map((_, i) => i);
+  for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
+  return { ...q, options: order.map(i => q.options[i]), answer: order.indexOf(q.answer) };
+}
+
+/* ---------- Pieces ---------- */
+function logo(size) {
+  let leaves = "";
+  for (let i = 0; i < 7; i++) {
+    const angle = 115 + i * 19, rad = angle * Math.PI / 180;
+    const x = 100 + 70 * Math.cos(rad), y = 108 - 70 * Math.sin(rad), r = -angle + 125;
+    leaves += `<ellipse cx="${x}" cy="${y}" rx="7" ry="15" transform="rotate(${r} ${x} ${y})"/>`;
+    leaves += `<ellipse cx="${200 - x}" cy="${y}" rx="7" ry="15" transform="rotate(${-r} ${200 - x} ${y})"/>`;
+  }
+  return `<svg viewBox="0 0 200 200" width="${size}" height="${size}" role="img" aria-label="Sustainable Olympiad logo" style="flex-shrink:0">
+    <circle cx="100" cy="100" r="96" fill="#12244a" stroke="#f2b632" stroke-width="4"/>
+    <g fill="#3fae49">${leaves}</g>
+    <path d="M58 166 Q100 186 142 166" stroke="#3fae49" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M86 112 H114 L106 168 H94 Z" fill="#f2b632"/>
+    <rect x="82" y="102" width="36" height="12" rx="3" fill="#f2b632"/>
+    <path d="M100 30 C116 50 128 66 124 84 C121 96 112 102 100 102 C88 102 79 96 76 84 C72 66 86 54 100 30 Z" fill="#e03a3e"/>
+    <path d="M100 48 C110 62 116 72 114 84 C112 93 107 98 100 98 C93 98 88 93 86 84 C84 72 92 62 100 48 Z" fill="#f2b632"/>
+    <path d="M100 60 C100 60 89 75 89 83 A11 11 0 0 0 111 83 C111 75 100 60 100 60 Z" fill="#2f9be0"/>
+    <ellipse cx="96" cy="82" rx="2.5" ry="4" fill="#ffffff" opacity="0.7"/>
+  </svg>`;
+}
+const BTN = "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-bold transition disabled:cursor-not-allowed disabled:opacity-40";
+const btn = {
+  primary: BTN + " bg-torch text-white shadow-lg shadow-black/20 hover:brightness-110 active:scale-[0.98]",
+  secondary: BTN + " bg-white text-navy hover:bg-white/90",
+  ghost: BTN + " border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/5",
+};
+const ring = { leaf: "ring-leaf bg-leaf/15", water: "ring-water bg-water/15", gold: "ring-gold bg-gold/15", torch: "ring-torch bg-torch/15" };
+const txt = { leaf: "text-leaf", water: "text-water", gold: "text-gold", torch: "text-torch" };
+
+function shell(inner) {
+  return `<div class="flex min-h-full flex-col">
+    <header class="border-b border-white/10">
+      <div class="mx-auto flex max-w-3xl items-center gap-3 px-4 py-3">
+        <button data-go="home" class="flex items-center gap-2 font-bold tracking-wide">${logo(36)}<span>Sustainable Olympiad</span></button>
+      </div>
+    </header>
+    <main class="mx-auto w-full max-w-3xl flex-1 px-4 py-6 sm:py-10">${inner}</main>
+    ${footer()}
+  </div>`;
+}
+function footer() {
+  return `<footer class="border-t border-white/10 px-4 py-4 text-center text-xs text-white/50">PORTO talks · “The world as seen by the students” · SDG 4 Quality Education</footer>`;
+}
+function phaseBar(current) {
+  const phases = [[1, "Test"], [2, "Riddle"], [3, "Final Test"]];
+  const pct = Math.min((current - 1) / 3 * 100, 100) || 4;
+  return `<div class="mb-6">
+    <div class="mb-2 h-2 overflow-hidden rounded-full bg-white/10"><div class="h-full rounded-full bg-gradient-to-r from-leaf via-water to-gold transition-all duration-500" style="width:${pct}%"></div></div>
+    <ol class="grid grid-cols-3 gap-2 text-center text-xs sm:text-sm">${phases.map(([n, l]) => {
+      const done = n < current, active = n === current;
+      const c = done ? "border-leaf bg-leaf text-white" : active ? "border-gold bg-gold text-navy" : "border-white/30 text-white/60";
+      return `<li class="flex flex-col items-center gap-1"><span class="flex h-8 w-8 items-center justify-center rounded-full border-2 font-bold ${c}">${done ? "✓" : n}</span><span class="${active ? "font-semibold text-gold" : "text-white/70"}">Phase ${n} · ${l}</span></li>`;
+    }).join("")}</ol>
+  </div>`;
+}
+
+/* ---------- Screens ---------- */
+function home() {
+  const step = currentStep(), inProgress = step !== "level";
+  const phases = [
+    [1, "Test", "10 multiple-choice questions about sustainability and the environment.", "text-leaf"],
+    [2, "Riddle", "An environmental riddle to solve with knowledge and creativity.", "text-water"],
+    [3, "Final Test", "A tougher final challenge to complete the competition.", "text-gold"],
+  ];
+  return `<main class="mx-auto flex max-w-3xl flex-col items-center px-4 py-10 text-center sm:py-16">
+    <div class="drop-shadow-xl">${logo(170)}</div>
+    <p class="mt-6 text-sm font-semibold uppercase tracking-[0.25em] text-gold">PORTO talks · The world as seen by the students</p>
+    <h1 class="mt-3 text-4xl font-black leading-tight sm:text-6xl">Sustainable Olympiad</h1>
+    <p class="mt-5 max-w-xl text-lg text-white/85">A school competition created by students, for students. Test what you know about recycling, water, energy, climate and biodiversity — and prove that you are ready to protect our planet.</p>
+    <p class="mt-3 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm"><span class="h-2 w-2 rounded-full bg-torch"></span> Supporting SDG 4 · Quality Education</p>
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+      <button data-go="level" class="${btn.primary} px-10 py-4 text-lg">${inProgress ? "Start over" : "Start"}</button>
+      ${inProgress ? `<button data-go="${step}" class="${btn.secondary} px-10 py-4 text-lg">Continue</button>` : ""}
+    </div>
+    <section class="mt-14 grid w-full gap-4 text-left sm:grid-cols-3">${phases.map(([n, t, d, c]) => `
+      <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+        <p class="text-sm font-bold uppercase tracking-wider ${c}">Phase ${n}</p>
+        <h2 class="mt-1 text-xl font-bold">${t}</h2>
+        <p class="mt-2 text-sm text-white/75">${d}</p>
+      </div>`).join("")}
+    </section>
+    <section class="mt-6 w-full rounded-2xl bg-white/5 p-5 text-left ring-1 ring-white/10">
+      <h2 class="text-lg font-bold">Four levels, one goal</h2>
+      <ul class="mt-3 grid gap-2 text-sm text-white/80 sm:grid-cols-2">${DATA.levels.map(l => `<li><span class="font-bold ${txt[l.color]}">${l.name}</span> · ${l.audience}</li>`).join("")}</ul>
+    </section>
+  </main>${footer()}`;
+}
+
+function levelScreen() {
+  const s = ui.level;
+  const year = schoolYear(s.yearId);
+  const info = year && levelInfo(year.level);
+  const c = year && content(year.level);
+  return shell(`
+    <h1 class="text-3xl font-black sm:text-4xl">Choose your school year</h1>
+    <p class="mt-2 text-white/75">We'll place you in the right level automatically.</p>
+    <label class="mt-6 block" for="student-name">
+      <span class="text-sm font-semibold text-white/80">Your name (for the certificate, optional)</span>
+      <input id="student-name" data-field="name" value="${esc(s.name)}" maxlength="40" placeholder="e.g. Maria Silva" autocomplete="off"
+        class="mt-2 w-full rounded-2xl border-2 border-white/20 bg-navy-light px-4 py-3 text-white placeholder:text-white/40 focus:border-water focus:outline-none">
+    </label>
+    <div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">${DATA.schoolYears.map(y => {
+      const li = levelInfo(y.level), sel = y.id === s.yearId;
+      return `<button data-year="${y.id}" aria-pressed="${sel}" class="rounded-2xl p-4 text-left ring-2 transition ${sel ? ring[li.color] : "bg-white/5 ring-white/10 hover:ring-white/40"}">
+        <span class="block text-base font-bold leading-tight">${y.label}</span>
+        <span class="mt-1 block text-xs font-semibold ${txt[li.color]}">${li.name}</span></button>`;
+    }).join("")}</div>
+    ${info ? `<div class="mt-8 rounded-3xl p-6 ring-2 ${ring[info.color]}">
+      <p class="text-sm uppercase tracking-widest text-white/70">You have been placed in</p>
+      <p class="mt-1 text-4xl font-black ${txt[info.color]}">${info.name}</p>
+      <p class="mt-1 text-white/80">${info.audience}</p>
+      <ul class="mt-4 grid gap-1 text-sm text-white/85">
+        <li>① Test · ${c.test.length} questions</li><li>② Riddle · up to 2 hints</li><li>③ Final Test · ${c.final.length} harder questions</li>
+      </ul>
+      <button data-action="begin" class="${btn.primary} mt-6 w-full sm:w-auto">Begin Phase 1 →</button>
+    </div>` : ""}
+  `);
+}
+
+function quizScreen() {
+  const q = ui.quiz, isFinal = q.phase === "final";
+  const title = isFinal ? "Phase 3 · Final Test" : "Phase 1 · Test";
+  const pts = isFinal ? FINAL_PTS : TEST_PTS, max = q.items.length * pts;
+  const bar = phaseBar(q.finished ? (isFinal ? 4 : 2) : (isFinal ? 3 : 1));
+  if (q.finished) {
+    const pct = Math.round(q.correct / q.items.length * 100);
+    const msg = pct >= 80 ? "Outstanding! You're a true guardian of the planet. 🌍" : pct >= 50 ? "Well done! You know a lot about sustainability. 🌱" : "Good effort! Every answer is a chance to learn something new. 💧";
+    return shell(bar + `<section class="rounded-3xl bg-white/5 p-6 text-center ring-1 ring-white/10 sm:p-10">
+      <p class="text-sm uppercase tracking-widest text-gold">${title} complete</p>
+      <p class="tabular mt-4 text-6xl font-black">${q.correct * pts}<span class="text-2xl text-white/60"> / ${max}</span></p>
+      <p class="mt-2 text-white/80">${q.correct} of ${q.items.length} correct (${pct}%)</p>
+      <p class="mt-4 text-lg">${msg}</p>
+      <button data-go="${isFinal ? "results" : "riddle"}" class="${btn.primary} mt-8">${isFinal ? "See my results" : "Go to Phase 2 · Riddle"} →</button>
+    </section>`);
+  }
+  const item = q.items[q.index], answered = q.picked !== null, isLast = q.index === q.items.length - 1;
+  const intro = isFinal
+    ? `The last challenge! These ${q.items.length} questions are harder, so each one is worth ${FINAL_PTS} points.`
+    : `${levelInfo(P.level).name}: answer ${q.items.length} questions about sustainability. Each correct answer is worth ${TEST_PTS} point.`;
+  const letters = ["A", "B", "C", "D", "E"];
+  return shell(bar + `
+    <div class="mb-4 flex items-baseline justify-between gap-4">
+      <h1 class="text-2xl font-black sm:text-3xl">${title}</h1>
+      <span class="tabular shrink-0 rounded-full bg-white/10 px-3 py-1 text-sm font-semibold">${q.index + 1} / ${q.items.length}</span>
+    </div>
+    ${q.index === 0 && !answered ? `<p class="mb-4 text-white/70">${intro}</p>` : ""}
+    <div class="mb-3 h-1.5 overflow-hidden rounded-full bg-white/10"><div class="h-full bg-water transition-all" style="width:${(q.index + (answered ? 1 : 0)) / q.items.length * 100}%"></div></div>
+    <div class="rounded-3xl bg-white/5 p-5 ring-1 ring-white/10 sm:p-8">
+      <h2 class="mb-5 text-lg font-bold leading-snug sm:text-xl">${esc(item.question)}</h2>
+      <ul class="grid gap-3">${item.options.map((o, i) => {
+        let style = "border-white/20 bg-navy-light hover:border-water hover:bg-water/10", badge = "bg-white/10", mark = letters[i];
+        if (answered) {
+          if (i === item.answer) { style = "border-leaf bg-leaf/25"; badge = "bg-leaf"; mark = "✓"; }
+          else if (i === q.picked) { style = "border-torch bg-torch/25"; badge = "bg-torch"; mark = "✗"; }
+          else style = "border-white/10 bg-navy-light opacity-60";
+        }
+        return `<li><button data-pick="${i}" ${answered ? "disabled" : ""} class="flex w-full items-center gap-3 rounded-2xl border-2 p-3 text-left transition sm:p-4 ${style}">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-bold ${badge}">${mark}</span><span class="min-w-0">${esc(o)}</span></button></li>`;
+      }).join("")}</ul>
+      ${answered ? `<div class="mt-5 rounded-2xl p-4 ${q.picked === item.answer ? "bg-leaf/15 ring-1 ring-leaf/50" : "bg-torch/15 ring-1 ring-torch/50"}" role="status">
+        <p class="font-bold">${q.picked === item.answer ? "Correct! 🎉" : "Not quite."}</p>
+        <p class="mt-1 text-white/85">${esc(item.explanation)}</p></div>` : ""}
+    </div>
+    <div class="mt-5 flex items-center justify-between gap-3">
+      <span class="tabular text-sm text-white/60">Score: ${q.correct * pts} / ${max}</span>
+      <button data-action="next" ${answered ? "" : "disabled"} class="${btn.primary}">${isLast ? "See my score" : "Next question"} →</button>
+    </div>`);
+}
+
+function riddleScreen() {
+  const r = ui.riddle, riddle = content(P.level).riddle;
+  const worth = RIDDLE_POINTS[Math.min(r.hintsUsed, 2)];
+  const hints = riddle.hints.slice(0, r.hintsUsed).map((h, i) =>
+    `<p class="mt-3 rounded-2xl bg-gold/15 p-4 ring-1 ring-gold/50"><span class="font-bold text-gold">Hint ${i + 1}:</span> ${esc(h)}</p>`).join("");
+  const body = r.outcome ? `
+    <section class="mt-6 rounded-3xl p-6 text-center ring-2 ${r.outcome === "solved" ? "bg-leaf/15 ring-leaf" : "bg-white/5 ring-white/20"}">
+      <p class="text-sm uppercase tracking-widest text-white/70">${r.outcome === "solved" ? "Riddle solved! 🎉" : "The answer was"}</p>
+      <p class="mt-2 text-4xl font-black">${esc(riddle.solution)}</p>
+      <p class="mt-3 text-white/85">${esc(riddle.explanation)}</p>
+      <p class="tabular mt-4 text-2xl font-bold">+${r.outcome === "solved" ? worth : 0}<span class="text-base text-white/60"> / ${RIDDLE_MAX} points</span></p>
+      <button data-go="final" class="${btn.primary} mt-6">Go to Phase 3 · Final Test →</button>
+    </section>` : `
+    <form data-form="riddle" class="mt-6 flex flex-col gap-3 sm:flex-row">
+      <input id="riddle-answer" data-field="guess" value="${esc(r.guess)}" placeholder="Type your answer…" aria-label="Your answer" autocomplete="off" autocapitalize="off"
+        class="min-w-0 flex-1 rounded-2xl border-2 border-white/20 bg-navy-light px-4 py-3 text-lg text-white placeholder:text-white/40 focus:border-water focus:outline-none">
+      <button type="submit" class="${btn.primary}">Submit answer</button>
+    </form>
+    ${r.wrong ? `<p class="mt-3 text-torch" role="status">Not quite — try again! (${r.wrong} ${r.wrong === 1 ? "attempt" : "attempts"})</p>` : ""}
+    <div class="mt-6 flex flex-wrap items-center gap-3">
+      <button data-action="hint" ${r.hintsUsed >= riddle.hints.length ? "disabled" : ""} class="${btn.ghost}">💡 Get a hint (${riddle.hints.length - r.hintsUsed} left)</button>
+      <span class="text-sm text-white/70">Currently worth <strong class="text-gold">${worth} points</strong></span>
+      <button data-action="reveal" class="ml-auto text-sm text-white/50 underline hover:text-white">Give up and reveal (0 points)</button>
+    </div>`;
+  return shell(phaseBar(r.outcome ? 3 : 2) + `
+    <h1 class="text-2xl font-black sm:text-3xl">Phase 2 · Riddle</h1>
+    <p class="mt-2 text-white/75">Use your knowledge and creativity! Solve it without hints for ${RIDDLE_MAX} points. Each hint lowers the prize.</p>
+    <figure class="mt-6 rounded-3xl bg-gradient-to-br from-water/25 to-leaf/20 p-6 ring-1 ring-white/15 sm:p-8">
+      <span aria-hidden="true" class="text-4xl">🧩</span>
+      <blockquote class="mt-3 whitespace-pre-line text-lg font-medium leading-relaxed sm:text-xl">${esc(riddle.text)}</blockquote>
+    </figure>
+    ${hints}${body}`);
+}
+
+function resultsScreen() {
+  const { score, max } = total(), pct = Math.round(score / max * 100), m = medalFor(pct);
+  const info = levelInfo(P.level), year = schoolYear(P.schoolYearId);
+  const rows = [
+    ["Phase 1 · Test", P.test, "bg-leaf", ""],
+    ["Phase 2 · Riddle", P.riddle, "bg-water", P.riddle.solved ? `${P.riddle.hintsUsed} hint${P.riddle.hintsUsed === 1 ? "" : "s"} used` : "Not solved"],
+    ["Phase 3 · Final Test", P.final, "bg-gold", ""],
+  ];
+  return shell(phaseBar(4) + `
+    <section class="text-center">
+      <p class="text-sm uppercase tracking-widest text-gold">Competition complete</p>
+      <h1 class="mt-2 text-3xl font-black sm:text-4xl">${P.studentName ? `Congratulations, ${esc(P.studentName)}!` : "Congratulations!"}</h1>
+      <p class="mt-2 text-white/75">${info.name}${year ? ` · ${year.label}` : ""}</p>
+      <div class="mx-auto mt-8 flex h-44 w-44 flex-col items-center justify-center rounded-full bg-white/5 ring-8 ring-gold/70">
+        <span class="tabular text-5xl font-black">${score}</span><span class="text-white/60">of ${max} points</span>
+      </div>
+      <p class="mt-4 text-2xl font-black ${m.cls}">${m.label === "Participant" ? "🌱 Green Participant" : `🏅 ${m.label} medal`} · ${pct}%</p>
+    </section>
+    <ul class="mt-8 grid gap-3">${rows.map(([l, r, c, note]) => `
+      <li class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+        <div class="flex items-baseline justify-between gap-4"><span class="font-bold">${l}</span><span class="tabular font-bold">${r.score} <span class="text-white/60">/ ${r.max}</span></span></div>
+        <div class="mt-2 h-2 overflow-hidden rounded-full bg-white/10"><div class="h-full rounded-full ${c}" style="width:${r.score / r.max * 100}%"></div></div>
+        ${note ? `<p class="mt-1 text-xs text-white/60">${note}</p>` : ""}
+      </li>`).join("")}</ul>
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+      <button data-go="certificate" class="${btn.primary}">🎓 View my certificate</button>
+      <button data-action="again" class="${btn.ghost}">Play again</button>
+    </div>`);
+}
+
+function certificateScreen() {
+  const { score, max } = total(), pct = Math.round(score / max * 100), m = medalFor(pct);
+  const info = levelInfo(P.level), year = schoolYear(P.schoolYearId);
+  const date = new Date(P.completedAt || Date.now()).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  return shell(`
+    <article class="relative overflow-hidden rounded-3xl bg-white p-2 text-navy shadow-2xl">
+      <div class="absolute inset-x-0 top-0 flex h-2"><span class="flex-1 bg-leaf"></span><span class="flex-1 bg-water"></span><span class="flex-1 bg-gold"></span><span class="flex-1 bg-torch"></span></div>
+      <div class="rounded-[1.25rem] border-4 border-double border-gold p-6 text-center sm:p-10">
+        <div class="flex justify-center">${logo(96)}</div>
+        <p class="mt-4 text-xs font-bold uppercase tracking-[0.3em] text-water">Sustainable Olympiad</p>
+        <h1 class="mt-2 font-serif text-3xl font-black sm:text-5xl">Certificate of Completion</h1>
+        <p class="mt-6 text-navy/70">This certificate is proudly awarded to</p>
+        <p class="mt-2 border-b-2 border-gold/60 pb-2 font-serif text-3xl font-bold italic sm:text-4xl">${esc(P.studentName || "Olympiad Participant")}</p>
+        <p class="mx-auto mt-6 max-w-lg text-navy/80">for successfully completing all three phases of the Sustainable Olympiad — Test, Riddle and Final Test — in <strong>${info.name}</strong>${year ? ` (${year.label})` : ""}, showing commitment to a more sustainable world.</p>
+        <div class="mt-8 grid grid-cols-3 gap-2 text-sm">
+          <div><p class="tabular text-2xl font-black">${score}/${max}</p><p class="text-navy/60">Total score</p></div>
+          <div><p class="text-2xl font-black">${m.label === "Participant" ? "🌱" : "🏅"}</p><p class="text-navy/60">${m.label === "Participant" ? "Green Participant" : m.label + " medal"}</p></div>
+          <div><p class="tabular text-2xl font-black">${pct}%</p><p class="text-navy/60">${date}</p></div>
+        </div>
+        <p class="mt-8 text-xs text-navy/60">PORTO talks · “The world as seen by the students” · SDG 4 Quality Education</p>
+      </div>
+    </article>
+    <div class="mt-6 flex justify-center"><button data-go="results" class="${btn.ghost}">← Back to results</button></div>`);
+}
+
+/* ---------- Navigation & events ---------- */
+function go(screen) {
+  // Phases run in order: steer to the step the saved progress allows.
+  const step = currentStep();
+  if (["test", "riddle", "final"].includes(screen) && screen !== step) screen = step === "level" ? "level" : step;
+  if ((screen === "results" || screen === "certificate") && step !== "results") screen = step;
+  if (screen === "level") ui.level = { yearId: null, name: P.studentName || "" };
+  if (screen === "test" || screen === "final") {
+    const items = content(P.level)[screen].map(shuffle);
+    ui.quiz = { phase: screen, items, index: 0, picked: null, correct: 0, finished: false };
+    screen = "quiz";
+  }
+  if (screen === "riddle") ui.riddle = { hintsUsed: 0, wrong: 0, outcome: null, guess: "" };
+  ui.screen = screen;
+  render();
+  window.scrollTo(0, 0);
+}
+function render() {
+  const s = ui.screen;
+  app.innerHTML = s === "home" ? home() : s === "level" ? levelScreen() : s === "quiz" ? quizScreen()
+    : s === "riddle" ? riddleScreen() : s === "results" ? resultsScreen() : certificateScreen();
+}
+
+app.addEventListener("input", e => {
+  const f = e.target.dataset.field;
+  if (f === "name") ui.level.name = e.target.value;
+  if (f === "guess") ui.riddle.guess = e.target.value;
+});
+app.addEventListener("submit", e => {
+  e.preventDefault();
+  const r = ui.riddle, riddle = content(P.level).riddle;
+  if (!r.guess.trim() || r.outcome) return;
+  if (riddleCorrect(r.guess, riddle.answers)) {
+    r.outcome = "solved";
+    P.riddle = { score: RIDDLE_POINTS[Math.min(r.hintsUsed, 2)], max: RIDDLE_MAX, hintsUsed: r.hintsUsed, solved: true };
+    save(); render();
+  } else {
+    r.wrong++; render();
+    const input = document.getElementById("riddle-answer");
+    if (input) { input.focus(); input.select(); }
+  }
+});
+app.addEventListener("click", e => {
+  const el = e.target.closest("button");
+  if (!el || el.disabled) return;
+  const d = el.dataset;
+  if (d.go) return go(d.go);
+  if (d.year) { ui.level.yearId = d.year; return render(); }
+  if (d.pick !== undefined) {
+    const q = ui.quiz, item = q.items[q.index];
+    if (q.picked !== null) return;
+    q.picked = Number(d.pick);
+    if (q.picked === item.answer) q.correct++;
+    return render();
+  }
+  switch (d.action) {
+    case "begin": {
+      const y = schoolYear(ui.level.yearId);
+      P = { ...empty, studentName: ui.level.name.trim(), schoolYearId: y.id, level: y.level };
+      save(); return go("test");
+    }
+    case "next": {
+      const q = ui.quiz, pts = q.phase === "final" ? FINAL_PTS : TEST_PTS;
+      if (q.index === q.items.length - 1) {
+        const result = { score: q.correct * pts, max: q.items.length * pts };
+        if (q.phase === "final") { P.final = result; P.completedAt = new Date().toISOString(); } else P.test = result;
+        q.finished = true; save();
+      } else { q.index++; q.picked = null; }
+      render(); window.scrollTo(0, 0); return;
+    }
+    case "hint": ui.riddle.hintsUsed++; return render();
+    case "reveal": {
+      const r = ui.riddle;
+      r.outcome = "revealed";
+      P.riddle = { score: 0, max: RIDDLE_MAX, hintsUsed: r.hintsUsed, solved: false };
+      save(); return render();
+    }
+    case "again": P = { ...empty, studentName: P.studentName }; save(); return go("level");
+  }
+});
+
+render();
+</script>

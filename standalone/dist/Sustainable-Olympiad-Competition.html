@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sustainable Olympiad – Competition</title>
+
+</head>
+<body>
+<style>
+  /* Single dark look by design: navy ground, white text, laurel/water/gold/torch accents. */
+  :root {
+    --navy: #1a3263;
+    --navy-dark: #12244a;
+    --navy-light: #24427f;
+    --leaf: #3fae49;
+    --water: #2f9be0;
+    --gold: #f2b632;
+    --torch: #e03a3e;
+    --ink: #ffffff;
+    color-scheme: dark;
+  }
+  html, body { background: var(--navy); color: var(--ink); }
+  body {
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(47, 155, 224, 0.18), transparent 45%),
+      radial-gradient(circle at 90% 100%, rgba(63, 174, 73, 0.15), transparent 45%);
+    min-height: 100%;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2 { text-wrap: balance; }
+  .tabular { font-variant-numeric: tabular-nums; }
+  button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+<style>*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.inset-x-0{left:0;right:0}.top-0{top:0}.mx-auto{margin-left:auto;margin-right:auto}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.ml-auto{margin-left:auto}.mt-1{margin-top:.25rem}.mt-14{margin-top:3.5rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-1\.5{height:.375rem}.h-2{height:.5rem}.h-44{height:11rem}.h-8{height:2rem}.h-full{height:100%}.min-h-full{min-height:100%}.w-2{width:.5rem}.w-44{width:11rem}.w-8{width:2rem}.w-full{width:100%}.min-w-0{min-width:0}.max-w-3xl{max-width:48rem}.max-w-lg{max-width:32rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.overflow-hidden{overflow:hidden}.whitespace-pre-line{white-space:pre-line}.text-wrap{text-wrap:wrap}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-\[1\.25rem\]{border-radius:1.25rem}.rounded-full{border-radius:9999px}.border-2{border-width:2px}.border-4{border-width:4px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-t{border-top-width:1px}.border-double{border-style:double}.border-gold{--tw-border-opacity:1;border-color:rgb(242 182 50/var(--tw-border-opacity,1))}.border-gold\/60{border-color:rgba(242,182,50,.6)}.border-leaf{--tw-border-opacity:1;border-color:rgb(63 174 73/var(--tw-border-opacity,1))}.border-torch{--tw-border-opacity:1;border-color:rgb(224 58 62/var(--tw-border-opacity,1))}.border-white\/10{border-color:hsla(0,0%,100%,.1)}.border-white\/20{border-color:hsla(0,0%,100%,.2)}.border-white\/30{border-color:hsla(0,0%,100%,.3)}.bg-gold{--tw-bg-opacity:1;background-color:rgb(242 182 50/var(--tw-bg-opacity,1))}.bg-gold\/15{background-color:rgba(242,182,50,.15)}.bg-leaf{--tw-bg-opacity:1;background-color:rgb(63 174 73/var(--tw-bg-opacity,1))}.bg-leaf\/15{background-color:rgba(63,174,73,.15)}.bg-leaf\/25{background-color:rgba(63,174,73,.25)}.bg-navy-light{--tw-bg-opacity:1;background-color:rgb(36 66 127/var(--tw-bg-opacity,1))}.bg-torch{--tw-bg-opacity:1;background-color:rgb(224 58 62/var(--tw-bg-opacity,1))}.bg-torch\/15{background-color:rgba(224,58,62,.15)}.bg-torch\/25{background-color:rgba(224,58,62,.25)}.bg-water{--tw-bg-opacity:1;background-color:rgb(47 155 224/var(--tw-bg-opacity,1))}.bg-water\/15{background-color:rgba(47,155,224,.15)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.bg-white\/10{background-color:hsla(0,0%,100%,.1)}.bg-white\/5{background-color:hsla(0,0%,100%,.05)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right,var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.from-leaf{--tw-gradient-from:#3fae49 var(--tw-gradient-from-position);--tw-gradient-to:rgba(63,174,73,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-water\/25{--tw-gradient-from:rgba(47,155,224,.25) var(--tw-gradient-from-position);--tw-gradient-to:rgba(47,155,224,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-water{--tw-gradient-to:rgba(47,155,224,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),#2f9be0 var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-gold{--tw-gradient-to:#f2b632 var(--tw-gradient-to-position)}.to-leaf\/20{--tw-gradient-to:rgba(63,174,73,.2) var(--tw-gradient-to-position)}.p-2{padding:.5rem}.p-3{padding:.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-10{padding-left:2.5rem;padding-right:2.5rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-2{padding-bottom:.5rem}.text-left{text-align:left}.text-center{text-align:center}.font-serif{font-family:ui-serif,Georgia,Cambria,Times New Roman,Times,serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.leading-tight{line-height:1.25}.tracking-\[0\.25em\]{letter-spacing:.25em}.tracking-\[0\.3em\]{letter-spacing:.3em}.tracking-wide{letter-spacing:.025em}.tracking-wider{letter-spacing:.05em}.tracking-widest{letter-spacing:.1em}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6/var(--tw-text-opacity,1))}.text-gold{--tw-text-opacity:1;color:rgb(242 182 50/var(--tw-text-opacity,1))}.text-leaf{--tw-text-opacity:1;color:rgb(63 174 73/var(--tw-text-opacity,1))}.text-navy{--tw-text-opacity:1;color:rgb(26 50 99/var(--tw-text-opacity,1))}.text-navy\/60{color:rgba(26,50,99,.6)}.text-navy\/70{color:rgba(26,50,99,.7)}.text-navy\/80{color:rgba(26,50,99,.8)}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240/var(--tw-text-opacity,1))}.text-torch{--tw-text-opacity:1;color:rgb(224 58 62/var(--tw-text-opacity,1))}.text-water{--tw-text-opacity:1;color:rgb(47 155 224/var(--tw-text-opacity,1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.text-white\/50{color:hsla(0,0%,100%,.5)}.text-white\/60{color:hsla(0,0%,100%,.6)}.text-white\/70{color:hsla(0,0%,100%,.7)}.text-white\/75{color:hsla(0,0%,100%,.75)}.text-white\/80{color:hsla(0,0%,100%,.8)}.text-white\/85{color:hsla(0,0%,100%,.85)}.underline{text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-60{opacity:.6}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color)}.shadow-2xl,.shadow-lg{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)}.shadow-black\/20{--tw-shadow-color:rgba(0,0,0,.2);--tw-shadow:var(--tw-shadow-colored)}.outline{outline-style:solid}.ring{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color)}.ring,.ring-1{box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}.ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)}.ring-2{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)}.ring-2,.ring-8{box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}.ring-8{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(8px + var(--tw-ring-offset-width)) var(--tw-ring-color)}.ring-gold{--tw-ring-opacity:1;--tw-ring-color:rgb(242 182 50/var(--tw-ring-opacity,1))}.ring-gold\/50{--tw-ring-color:rgba(242,182,50,.5)}.ring-gold\/70{--tw-ring-color:rgba(242,182,50,.7)}.ring-leaf{--tw-ring-opacity:1;--tw-ring-color:rgb(63 174 73/var(--tw-ring-opacity,1))}.ring-leaf\/50{--tw-ring-color:rgba(63,174,73,.5)}.ring-torch{--tw-ring-opacity:1;--tw-ring-color:rgb(224 58 62/var(--tw-ring-opacity,1))}.ring-torch\/50{--tw-ring-color:rgba(224,58,62,.5)}.ring-water{--tw-ring-opacity:1;--tw-ring-color:rgb(47 155 224/var(--tw-ring-opacity,1))}.ring-white\/10{--tw-ring-color:hsla(0,0%,100%,.1)}.ring-white\/15{--tw-ring-color:hsla(0,0%,100%,.15)}.ring-white\/20{--tw-ring-color:hsla(0,0%,100%,.2)}.drop-shadow-xl{--tw-drop-shadow:drop-shadow(0 20px 13px rgba(0,0,0,.03)) drop-shadow(0 8px 5px rgba(0,0,0,.08))}.drop-shadow-xl,.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.duration-500{transition-duration:.5s}.placeholder\:text-white\/40::-moz-placeholder{color:hsla(0,0%,100%,.4)}.placeholder\:text-white\/40::placeholder{color:hsla(0,0%,100%,.4)}.hover\:border-water:hover{--tw-border-opacity:1;border-color:rgb(47 155 224/var(--tw-border-opacity,1))}.hover\:border-white\/60:hover{border-color:hsla(0,0%,100%,.6)}.hover\:bg-water\/10:hover{background-color:rgba(47,155,224,.1)}.hover\:bg-white\/5:hover{background-color:hsla(0,0%,100%,.05)}.hover\:bg-white\/90:hover{background-color:hsla(0,0%,100%,.9)}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.hover\:ring-white\/40:hover{--tw-ring-color:hsla(0,0%,100%,.4)}.hover\:brightness-110:hover{--tw-brightness:brightness(1.1);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.focus\:border-water:focus{--tw-border-opacity:1;border-color:rgb(47 155 224/var(--tw-border-opacity,1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.active\:scale-\[0\.98\]:active{--tw-scale-x:0.98;--tw-scale-y:0.98;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.disabled\:cursor-not-allowed:disabled{cursor:not-allowed}.disabled\:opacity-40:disabled{opacity:.4}@media (min-width:640px){.sm\:w-auto{width:auto}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.sm\:flex-row{flex-direction:row}.sm\:justify-center{justify-content:center}.sm\:p-10{padding:2.5rem}.sm\:p-4{padding:1rem}.sm\:p-8{padding:2rem}.sm\:py-10{padding-top:2.5rem;padding-bottom:2.5rem}.sm\:py-16{padding-top:4rem;padding-bottom:4rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-6xl{font-size:3.75rem;line-height:1}.sm\:text-sm{font-size:.875rem;line-height:1.25rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}}</style>
+
+<div id="app"></div>
+
+<script>
+const DATA = {"schoolYears":[{"id":"5","label":"5th grade","level":1},{"id":"6","label":"6th grade","level":1},{"id":"7","label":"7th grade","level":2},{"id":"8","label":"8th grade","level":2},{"id":"9","label":"9th grade","level":3},{"id":"hs1","label":"1st year of High School","level":3},{"id":"hs2","label":"2nd year of High School","level":4},{"id":"hs3","label":"3rd year of High School","level":4}],"levels":[{"level":1,"name":"Level 1","audience":"5th and 6th grade","color":"leaf"},{"level":2,"name":"Level 2","audience":"7th and 8th grade","color":"water"},{"level":3,"name":"Level 3","audience":"9th grade and 1st year of High School","color":"gold"},{"level":4,"name":"Level 4","audience":"2nd and 3rd year of High School","color":"torch"}],"content":{"1":{"level":1,"test":[{"question":"In Portugal, which recycling bin (ecoponto) is used for paper and cardboard?","options":["Green","Blue","Yellow","Red"],"answer":1,"explanation":"Paper and cardboard go in the blue bin. Yellow is for plastic and metal, green is for glass."},{"question":"What should you do while brushing your teeth to save water?","options":["Leave the tap running","Use hot water","Turn off the tap","Brush faster"],"answer":2,"explanation":"Turning off the tap while brushing can save up to 12 litres of water every time!"},{"question":"Which of these is a renewable source of energy?","options":["The Sun","Coal","Oil","Petrol"],"answer":0,"explanation":"The Sun will keep shining for billions of years, so solar energy never runs out."},{"question":"What do plants need to make their own food?","options":["Sugar and salt","Darkness and cold","Plastic and soil","Sunlight, water and air"],"answer":3,"explanation":"Plants use sunlight, water and carbon dioxide from the air to make food. This is called photosynthesis."},{"question":"Where should you put an empty glass jar?","options":["In the blue bin","In the green bin","In the yellow bin","On the ground"],"answer":1,"explanation":"Glass goes in the green bin, and it can be recycled again and again."},{"question":"Which action saves energy at home?","options":["Leaving the TV on all night","Opening the fridge often","Turning off the lights when you leave a room","Charging a phone that is already full"],"answer":2,"explanation":"Lights left on in empty rooms waste electricity. Switch them off!"},{"question":"What does the word \"biodiversity\" mean?","options":["The variety of all living things","A type of recycling bin","A kind of plastic","A big storm"],"answer":0,"explanation":"Biodiversity is the variety of plants, animals and other living things on Earth."},{"question":"Your school is 10 minutes away. What is the greenest way to get there?","options":["By car","By motorbike","By taxi","Walking or cycling"],"answer":3,"explanation":"Walking and cycling produce no pollution and are great for your health too."},{"question":"How long can a plastic bottle take to break down in nature?","options":["One week","One month","Hundreds of years","One year"],"answer":2,"explanation":"A plastic bottle can take around 450 years to break down. That is why recycling matters!"},{"question":"Why are bees so important?","options":["They make the weather sunny","They pollinate the plants that give us food","They clean the rivers","They eat plastic"],"answer":1,"explanation":"Bees carry pollen from flower to flower, which helps fruits and vegetables grow."}],"riddle":{"text":"I fall from the clouds but I am not snow,\nI fill up the rivers wherever they flow.\nYou drink me, you wash with me, all through the day —\nso please close the tap and don't throw me away!\nWhat am I?","hints":["I cover about 71% of our planet's surface.","Plants, animals and people all need me to live. My chemical formula is H₂O."],"answers":["water","rain","rainwater","h2o"],"solution":"Water","explanation":"Water is precious: only a tiny part of all the water on Earth is fresh water we can drink."},"final":[{"question":"What are the \"3 Rs\" of sustainability?","options":["Run, Rest, Read","Reduce, Reuse, Recycle","Rain, River, Rock","Red, Round, Rough"],"answer":1,"explanation":"Reduce what you use, Reuse what you can, and Recycle the rest."},{"question":"Which usually uses less water?","options":["A full bath","A short shower","Both use the same","Washing the car with a hose"],"answer":1,"explanation":"A 5-minute shower uses roughly half the water of a full bath."},{"question":"Which gas do trees take in from the air?","options":["Oxygen","Helium","Carbon dioxide","Nitrogen"],"answer":2,"explanation":"Trees absorb carbon dioxide and release the oxygen we breathe."},{"question":"Which item goes in the yellow recycling bin?","options":["A newspaper","A glass bottle","Banana peel","An empty drink can"],"answer":3,"explanation":"The yellow bin is for plastic and metal packaging, like cans and plastic bottles."},{"question":"What is compost made from?","options":["Food scraps and garden waste","Old batteries","Plastic bags","Broken glass"],"answer":0,"explanation":"Peels, leaves and other natural waste turn into rich soil called compost."},{"question":"Which sea animal often mistakes plastic bags for jellyfish and eats them?","options":["Shark","Sea turtle","Octopus","Crab"],"answer":1,"explanation":"Sea turtles love to eat jellyfish, and floating plastic bags look very similar."},{"question":"How much of all the water on Earth is fresh water?","options":["About half","About 3%","About 90%","All of it"],"answer":1,"explanation":"Only about 3% is fresh water, and most of it is frozen in ice. Every drop counts!"},{"question":"Which light bulb uses the least energy?","options":["Old incandescent bulb","Halogen bulb","LED bulb","They all use the same"],"answer":2,"explanation":"LED bulbs use up to 80% less energy and last much longer."},{"question":"What is the main cause of climate change?","options":["Planting too many trees","Burning coal, oil and gas","Recycling paper","Riding bicycles"],"answer":1,"explanation":"Burning fossil fuels releases gases that trap heat and warm up our planet."},{"question":"What is a habitat?","options":["A type of food","A recycling machine","The natural home of a plant or animal","A kind of weather"],"answer":2,"explanation":"A habitat gives living things food, water and shelter. Protecting habitats protects biodiversity."}]},"2":{"level":2,"test":[{"question":"What is the greenhouse effect?","options":["Growing vegetables inside a glass house","Gases in the atmosphere trapping the Sun's heat","Painting buildings green","The Moon blocking sunlight"],"answer":1,"explanation":"Gases like CO₂ keep heat near the Earth. More of them means a warmer planet."},{"question":"Which of these is a fossil fuel?","options":["Wind","Wood pellets","Coal","Sunlight"],"answer":2,"explanation":"Coal formed over millions of years from ancient plants. Once we burn it, it is gone."},{"question":"In the water cycle, what is it called when water vapour cools and forms clouds?","options":["Evaporation","Condensation","Precipitation","Infiltration"],"answer":1,"explanation":"Condensation turns water vapour into tiny droplets that form clouds."},{"question":"Which of these energy sources is NOT renewable?","options":["Wind","Solar","Hydropower","Natural gas"],"answer":3,"explanation":"Natural gas is a fossil fuel. Wind, solar and hydropower are renewable."},{"question":"In the \"3 Rs\", what does \"Reduce\" mean?","options":["Using and buying less in the first place","Making things smaller with a machine","Throwing things away faster","Recycling twice"],"answer":0,"explanation":"Reduce is the most important R: the best waste is the waste we never create."},{"question":"Which way of travelling 10 km produces the most CO₂ per person?","options":["Bicycle","Train","Full bus","Car with only the driver"],"answer":3,"explanation":"A car carrying one person spreads all its emissions over a single passenger."},{"question":"What is an ecosystem?","options":["A computer program about nature","Living things interacting with each other and their environment","A single type of animal","A recycling factory"],"answer":1,"explanation":"Forests, rivers and coral reefs are all ecosystems full of connections."},{"question":"What happens to coral reefs when the ocean becomes too warm?","options":["They grow faster","They turn into rocks instantly","They lose their colour and can die (bleaching)","Nothing happens"],"answer":2,"explanation":"Heat stress makes corals expel the algae that feed them, so they turn white."},{"question":"Which material can be recycled again and again without losing quality?","options":["Glass","Paper","Plastic bags","Polystyrene"],"answer":0,"explanation":"Glass can be melted and reshaped endlessly. Paper fibres get shorter each time."},{"question":"What is deforestation?","options":["Planting new forests","Clearing forests on a large scale","Studying trees","Turning wood into paper"],"answer":1,"explanation":"Deforestation destroys habitats and releases the carbon stored in trees."}],"riddle":{"text":"I'm born from the things that you throw in the bin:\npeels, leaves and coffee grounds — all welcome in.\nWorms are my workers, the soil is my friend,\nI turn yesterday's leftovers into a new start in the end.\nWhat am I?","hints":["Gardeners and farmers love me because I make plants grow strong.","You can make me at home in a special bin, and I cut down the waste that goes to landfill."],"answers":["compost","composting","humus","fertilizer","fertiliser"],"solution":"Compost","explanation":"About a third of household waste is organic. Composting turns it into natural fertiliser instead of landfill."},"final":[{"question":"Which greenhouse gas is released most by human activities?","options":["Oxygen","Carbon dioxide (CO₂)","Helium","Argon"],"answer":1,"explanation":"CO₂ from burning fossil fuels is the largest contributor to global warming."},{"question":"How many Sustainable Development Goals (SDGs) did the United Nations adopt in 2015?","options":["5","10","17","25"],"answer":2,"explanation":"There are 17 SDGs to reach by 2030. This olympiad supports SDG 4: Quality Education."},{"question":"How does a hydroelectric dam produce electricity?","options":["By burning water","Falling water spins turbines","By heating water with coal","With solar panels on the dam"],"answer":1,"explanation":"The energy of moving water turns turbines connected to generators."},{"question":"What are microplastics?","options":["Plastic made by microbes","Very small toys","Plastic pieces smaller than 5 mm","A type of biodegradable plastic"],"answer":2,"explanation":"Microplastics are found everywhere, from oceans to the food we eat."},{"question":"About how much water is needed to produce one cotton T-shirt?","options":["2 litres","27 litres","270 litres","2,700 litres"],"answer":3,"explanation":"Growing cotton is very thirsty — about 2,700 litres, what one person drinks in 2.5 years!"},{"question":"Which of these releases large amounts of methane, a powerful greenhouse gas?","options":["Solar panels","Cattle farming and landfills","Wind turbines","Bicycles"],"answer":1,"explanation":"Cows produce methane when digesting food, and rotting waste in landfills does too."},{"question":"What is an invasive species?","options":["A species brought to a new place where it harms local nature","A species that lives only in one place","An endangered species","A species that migrates every year"],"answer":0,"explanation":"Invasive species can outcompete native plants and animals and reduce biodiversity."},{"question":"Why does melting Arctic ice make global warming even faster?","options":["Ice produces CO₂ when it melts","Dark ocean water absorbs more sunlight than white ice","Melted ice makes the wind stronger","It does not affect warming"],"answer":1,"explanation":"White ice reflects sunlight back to space. Dark water absorbs it and warms up more."},{"question":"On the EU energy label, which letter marks the most energy-efficient appliances?","options":["A","D","G","Z"],"answer":0,"explanation":"The scale goes from A (most efficient) to G (least efficient)."},{"question":"Which food usually has the largest carbon footprint per kilogram?","options":["Lentils","Potatoes","Beef","Chicken"],"answer":2,"explanation":"Beef needs lots of land, feed and water, and cows release methane."}]},"3":{"level":3,"test":[{"question":"What is the main goal of the Paris Agreement (2015)?","options":["Ban all cars by 2025","Limit global warming to well below 2 °C, aiming for 1.5 °C","Plant one tree per person","Stop all international trade"],"answer":1,"explanation":"Almost every country agreed to keep warming well below 2 °C above pre-industrial levels."},{"question":"What causes ocean acidification?","options":["Oil spills only","Too much salt","The ocean absorbing CO₂ from the atmosphere","Fish waste"],"answer":2,"explanation":"Dissolved CO₂ forms carbonic acid, making it harder for shellfish and corals to build shells."},{"question":"Portugal produces a large share of its electricity from which sources?","options":["Nuclear power","Wind and hydropower","Coal","Geothermal only"],"answer":1,"explanation":"Portugal has no nuclear plants and closed its last coal plant in 2021. Wind and water lead the way."},{"question":"What is a circular economy?","options":["An economy that only uses coins","Take, make, throw away","Keeping products and materials in use for as long as possible","Trading only with neighbouring countries"],"answer":2,"explanation":"Instead of a straight line to the bin, materials are reused, repaired and recycled."},{"question":"What are the products of photosynthesis?","options":["Glucose and oxygen","Carbon dioxide and water","Nitrogen and salt","Methane and oxygen"],"answer":0,"explanation":"6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂."},{"question":"What is a carbon sink?","options":["A kitchen sink made of carbon","Anything that absorbs more carbon than it releases","A factory chimney","A coal mine"],"answer":1,"explanation":"Forests, oceans and soils are natural carbon sinks."},{"question":"What does \"biodegradable\" mean?","options":["Made from plastic","Can be broken down naturally by microorganisms","Can be recycled in the yellow bin","Lasts forever"],"answer":1,"explanation":"Bacteria and fungi break biodegradable materials back into natural substances."},{"question":"What do we call a layer of underground rock that stores groundwater?","options":["Estuary","Delta","Aquifer","Glacier"],"answer":2,"explanation":"Aquifers supply drinking water to billions of people and must be protected from pollution."},{"question":"According to scientists, what is the biggest driver of biodiversity loss worldwide?","options":["Changes in land use and habitat destruction","Noise from cities","Tourism","Light pollution"],"answer":0,"explanation":"Turning forests, wetlands and grasslands into farms and cities destroys habitats."},{"question":"What is eutrophication?","options":["Water turning into ice","Excess nutrients causing algae to bloom and oxygen to drop in water","A way of purifying water","The movement of tides"],"answer":1,"explanation":"Fertiliser runoff feeds algae; when they decay, oxygen runs out and fish die."}],"riddle":{"text":"I have no lungs, yet I help the whole planet breathe.\nI hold half the world's species beneath my green leaves.\nI drink the sky's carbon and make my own rain,\nbut when chainsaws arrive, I may not grow back again.\nWhat am I?","hints":["The largest one on Earth is in South America and is crossed by a giant river.","I'm hot, humid and very green — a forest that gets a lot of rain."],"answers":["rainforest","rain forest","tropical forest","amazon","forest","jungle"],"solution":"The rainforest","explanation":"Tropical rainforests cover a small part of Earth but are home to about half of all land species."},"final":[{"question":"The CO₂ concentration in the atmosphere today is approximately:","options":["180 ppm","280 ppm","420 ppm","1,000 ppm"],"answer":2,"explanation":"Before the Industrial Revolution it was about 280 ppm. Today it is over 420 ppm."},{"question":"What is a carbon footprint?","options":["A footprint left in charcoal","The total greenhouse gases caused by a person, product or activity","The amount of coal in a country","A measure of air quality"],"answer":1,"explanation":"It includes direct emissions (like driving) and indirect ones (like making the things we buy)."},{"question":"What is the process called when plants release water vapour through their leaves?","options":["Respiration","Transpiration","Condensation","Germination"],"answer":1,"explanation":"Transpiration moves huge amounts of water back into the atmosphere."},{"question":"Which choice best reduces the environmental impact of your clothes?","options":["Buying many cheap clothes each season","Buying fewer, durable items and second-hand clothes","Washing clothes at 90 °C","Throwing clothes away after a few uses"],"answer":1,"explanation":"Fast fashion uses lots of water and energy. Keeping clothes longer is the greenest option."},{"question":"Why are wetlands important?","options":["They filter water","They store carbon and reduce floods","They shelter many species","All of the above"],"answer":3,"explanation":"Wetlands are natural water filters, flood barriers, carbon stores and biodiversity hotspots."},{"question":"What is a keystone species?","options":["The largest animal in an ecosystem","A species whose impact on its ecosystem is much larger than its numbers suggest","A species that lives in rocks","A species that is extinct"],"answer":1,"explanation":"Remove a keystone species — like wolves or sea otters — and the whole ecosystem changes."},{"question":"What is a main challenge of solar and wind power?","options":["They produce a lot of CO₂","They depend on the weather, so energy storage is needed","They will run out soon","They only work at night"],"answer":1,"explanation":"Batteries, pumped hydro and smart grids help store energy for when it's dark or calm."},{"question":"What does thawing permafrost release?","options":["Fresh oxygen","Methane and carbon dioxide","Only clean water","Helium"],"answer":1,"explanation":"Frozen soils hold ancient organic matter. When they thaw, it decomposes and releases greenhouse gases."},{"question":"What is upcycling?","options":["Riding a bike uphill","Turning waste into a product of higher value","Burning waste for energy","Sending waste to another country"],"answer":1,"explanation":"Turning old jeans into a bag or pallets into furniture are examples of upcycling."},{"question":"What is the IPCC?","options":["An international football competition","A UN body that assesses the science of climate change","A recycling company","A type of solar panel"],"answer":1,"explanation":"The Intergovernmental Panel on Climate Change reviews thousands of studies to inform governments."}]},"4":{"level":4,"test":[{"question":"What is the difference between weather and climate?","options":["There is no difference","Weather is short-term conditions; climate is the long-term average (30+ years)","Climate changes every day; weather never changes","Weather only refers to temperature"],"answer":1,"explanation":"A cold day doesn't disprove global warming — climate is about long-term trends."},{"question":"What does \"net zero\" emissions mean?","options":["Emitting no gases at all","Balancing the greenhouse gases emitted with those removed from the atmosphere","Paying a fine for every tonne of CO₂","Stopping all industry"],"answer":1,"explanation":"Remaining emissions must be offset by removals such as forests or carbon capture. The EU aims for 2050."},{"question":"Which sector is the largest source of global greenhouse gas emissions?","options":["Energy (electricity, heat and transport)","Waste","Agriculture","Industrial chemical processes"],"answer":0,"explanation":"Energy use accounts for roughly three quarters of global emissions."},{"question":"In climate science, what is a \"tipping point\"?","options":["The tip of a melting glacier","A threshold beyond which change becomes self-reinforcing and hard to reverse","The hottest day of the year","A point on a weather map"],"answer":1,"explanation":"Examples include Amazon dieback and the collapse of the Greenland ice sheet."},{"question":"How does the EU Emissions Trading System (EU ETS) work?","options":["It bans all polluting companies","It sets a cap on emissions and companies trade allowances","It gives free electricity to citizens","It taxes only cars"],"answer":1,"explanation":"This \"cap and trade\" system makes polluting cost money, and the cap shrinks every year."},{"question":"What is \"green hydrogen\"?","options":["Hydrogen that is coloured green","Hydrogen made from natural gas","Hydrogen produced by electrolysis of water using renewable electricity","Hydrogen found in plants"],"answer":2,"explanation":"It could help decarbonise heavy industry, shipping and long-distance transport."},{"question":"What is a Life Cycle Assessment (LCA)?","options":["A medical exam","An analysis of a product's environmental impact from raw materials to disposal","A study of animal life spans","A bicycle safety test"],"answer":1,"explanation":"LCA looks at extraction, manufacturing, transport, use and end of life."},{"question":"When is a region said to be under \"water stress\"?","options":["When it rains too much","When water demand exceeds the available supply","When water is too salty to swim in","When rivers freeze"],"answer":1,"explanation":"Southern Europe, including parts of Portugal, faces increasing water stress due to droughts."},{"question":"What is greenwashing?","options":["Washing clothes with eco detergent","Making misleading claims that a product or company is environmentally friendly","Cleaning parks and gardens","Painting factories green"],"answer":1,"explanation":"Vague labels like \"eco\" or \"natural\" without evidence can be greenwashing. Stay critical!"},{"question":"Why do many scientists say we are in a \"sixth mass extinction\"?","options":["An asteroid recently hit Earth","Species are disappearing far faster than the natural rate, mainly due to humans","Dinosaurs are returning","Ice ages are becoming more frequent"],"answer":1,"explanation":"Current extinction rates are estimated to be tens to hundreds of times higher than the natural background rate."}],"riddle":{"text":"I'm a footprint left by everyone, yet no sand or mud ever holds me.\nI'm measured in tonnes, not in centimetres.\nEvery flight, every burger and every new gadget makes me bigger,\nbut smart choices can make me shrink.\nWhat am I?","hints":["I'm counted in tonnes of CO₂ equivalent per person per year.","My name combines a chemical element (atomic number 6) with something you leave when you walk."],"answers":["carbon footprint","co2 footprint","carbonfootprint","footprint of carbon"],"solution":"A carbon footprint","explanation":"The average EU citizen emits about 7 tonnes of CO₂e per year. To meet the Paris goals it should approach 2 tonnes."},"final":[{"question":"Over 100 years, roughly how much more warming does methane cause than the same mass of CO₂?","options":["The same","About 2 times","About 28 times","About 1,000 times"],"answer":2,"explanation":"Methane's global warming potential (GWP100) is around 27–30, though it stays in the air for a shorter time."},{"question":"What is the \"rebound effect\" (Jevons paradox)?","options":["Recycled materials bouncing back into use","Efficiency gains leading to more consumption, cancelling part of the savings","Ice sheets growing back in winter","Prices falling after a crisis"],"answer":1,"explanation":"E.g. a more efficient car may lead people to drive more. Efficiency must go hand in hand with sufficiency."},{"question":"Scientists worry that melting Greenland ice could weaken the AMOC. What is it?","options":["A European climate law","A system of Atlantic Ocean currents that carries heat northwards","A type of glacier","A satellite that measures CO₂"],"answer":1,"explanation":"The Atlantic Meridional Overturning Circulation keeps Europe's climate mild. Fresh meltwater can slow it."},{"question":"For a company, what are \"Scope 3\" emissions?","options":["Emissions from its own factories","Emissions from the electricity it buys","Indirect emissions across its whole value chain, from suppliers to customers","Emissions from its employees' homes only"],"answer":2,"explanation":"Scope 3 often makes up most of a company's footprint, which is why it is so hard to reduce."},{"question":"Which is a nature-based solution against coastal flooding?","options":["Building more car parks on the beach","Restoring dunes, salt marshes and mangroves","Removing all coastal vegetation","Dredging sand from beaches"],"answer":1,"explanation":"Healthy coastal ecosystems absorb wave energy, store carbon and support biodiversity."},{"question":"How many \"planetary boundaries\" define the safe operating space for humanity?","options":["3","5","9","17"],"answer":2,"explanation":"There are 9 boundaries, such as climate change and biosphere integrity. Six were found to be crossed in 2023."},{"question":"Which policy directly puts a price on emitting CO₂ to encourage reductions?","options":["A carbon tax","A fuel subsidy","A plastic bag giveaway","A speed limit"],"answer":0,"explanation":"Carbon taxes and emissions trading make polluters pay for the damage they cause."},{"question":"What is a major environmental drawback of seawater desalination?","options":["It makes water too sweet","High energy use and salty brine discharged back into the sea","It removes all fish from the ocean","It only works in winter"],"answer":1,"explanation":"Desalination can help in droughts, but needs renewable energy and careful brine management."},{"question":"What is the \"embodied carbon\" of a building?","options":["The carbon in the air inside it","Emissions from producing, transporting and building with its materials","Emissions from heating it in winter","The amount of wood in its furniture"],"answer":1,"explanation":"Cement and steel are carbon-intensive, so renovating is often greener than rebuilding."},{"question":"This olympiad supports which UN Sustainable Development Goal, \"Quality Education\"?","options":["SDG 4","SDG 6","SDG 13","SDG 15"],"answer":0,"explanation":"SDG 4 — because education is how we prepare a generation to protect the planet."}]}}};
+const KEY = "sustainable-olympiad:progress";
+const RIDDLE_POINTS = [10, 7, 4];
+const RIDDLE_MAX = 10;
+const TEST_PTS = 1, FINAL_PTS = 2;
+const empty = { studentName: "", schoolYearId: null, level: null, test: null, riddle: null, final: null, completedAt: null };
+
+let P = load();
+let ui = { screen: "home" };
+const app = document.getElementById("app");
+
+function load() {
+  try { const s = localStorage.getItem(KEY); if (s) return { ...empty, ...JSON.parse(s) }; } catch (e) {}
+  return { ...empty };
+}
+function save() { try { localStorage.setItem(KEY, JSON.stringify(P)); } catch (e) {} }
+function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
+
+const levelInfo = l => DATA.levels.find(x => x.level === l);
+const schoolYear = id => DATA.schoolYears.find(y => y.id === id);
+const content = l => DATA.content[l];
+function currentStep() {
+  if (!P.level) return "level";
+  if (!P.test) return "test";
+  if (!P.riddle) return "riddle";
+  if (!P.final) return "final";
+  return "results";
+}
+function total() {
+  return [P.test, P.riddle, P.final].filter(Boolean).reduce((a, r) => ({ score: a.score + r.score, max: a.max + r.max }), { score: 0, max: 0 });
+}
+function medalFor(pct) {
+  if (pct >= 85) return { label: "Gold", cls: "text-gold" };
+  if (pct >= 65) return { label: "Silver", cls: "text-slate-200" };
+  if (pct >= 40) return { label: "Bronze", cls: "text-amber-600" };
+  return { label: "Participant", cls: "text-leaf" };
+}
+function norm(s) {
+  return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/₂/g, "2")
+    .replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim()
+    .replace(/^(a|an|the|it is|its|it s|i am|im|i m)\s+/, "").replace(/^(a|an|the)\s+/, "");
+}
+function riddleCorrect(input, accepted) {
+  const g = norm(input);
+  if (!g) return false;
+  return accepted.some(a => { const t = norm(a); return g === t || (" " + g + " ").includes(" " + t + " "); });
+}
+function shuffle(q) {
+  if (q.options.some(o => /^(all|none) of the above/i.test(o))) return q;
+  const order = q.options.map((_, i) => i);
+  for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
+  return { ...q, options: order.map(i => q.options[i]), answer: order.indexOf(q.answer) };
+}
+
+/* ---------- Pieces ---------- */
+function logo(size) {
+  let leaves = "";
+  for (let i = 0; i < 7; i++) {
+    const angle = 115 + i * 19, rad = angle * Math.PI / 180;
+    const x = 100 + 70 * Math.cos(rad), y = 108 - 70 * Math.sin(rad), r = -angle + 125;
+    leaves += `<ellipse cx="${x}" cy="${y}" rx="7" ry="15" transform="rotate(${r} ${x} ${y})"/>`;
+    leaves += `<ellipse cx="${200 - x}" cy="${y}" rx="7" ry="15" transform="rotate(${-r} ${200 - x} ${y})"/>`;
+  }
+  return `<svg viewBox="0 0 200 200" width="${size}" height="${size}" role="img" aria-label="Sustainable Olympiad logo" style="flex-shrink:0">
+    <circle cx="100" cy="100" r="96" fill="#12244a" stroke="#f2b632" stroke-width="4"/>
+    <g fill="#3fae49">${leaves}</g>
+    <path d="M58 166 Q100 186 142 166" stroke="#3fae49" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M86 112 H114 L106 168 H94 Z" fill="#f2b632"/>
+    <rect x="82" y="102" width="36" height="12" rx="3" fill="#f2b632"/>
+    <path d="M100 30 C116 50 128 66 124 84 C121 96 112 102 100 102 C88 102 79 96 76 84 C72 66 86 54 100 30 Z" fill="#e03a3e"/>
+    <path d="M100 48 C110 62 116 72 114 84 C112 93 107 98 100 98 C93 98 88 93 86 84 C84 72 92 62 100 48 Z" fill="#f2b632"/>
+    <path d="M100 60 C100 60 89 75 89 83 A11 11 0 0 0 111 83 C111 75 100 60 100 60 Z" fill="#2f9be0"/>
+    <ellipse cx="96" cy="82" rx="2.5" ry="4" fill="#ffffff" opacity="0.7"/>
+  </svg>`;
+}
+const BTN = "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-bold transition disabled:cursor-not-allowed disabled:opacity-40";
+const btn = {
+  primary: BTN + " bg-torch text-white shadow-lg shadow-black/20 hover:brightness-110 active:scale-[0.98]",
+  secondary: BTN + " bg-white text-navy hover:bg-white/90",
+  ghost: BTN + " border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/5",
+};
+const ring = { leaf: "ring-leaf bg-leaf/15", water: "ring-water bg-water/15", gold: "ring-gold bg-gold/15", torch: "ring-torch bg-torch/15" };
+const txt = { leaf: "text-leaf", water: "text-water", gold: "text-gold", torch: "text-torch" };
+
+function shell(inner) {
+  return `<div class="flex min-h-full flex-col">
+    <header class="border-b border-white/10">
+      <div class="mx-auto flex max-w-3xl items-center gap-3 px-4 py-3">
+        <button data-go="home" class="flex items-center gap-2 font-bold tracking-wide">${logo(36)}<span>Sustainable Olympiad</span></button>
+      </div>
+    </header>
+    <main class="mx-auto w-full max-w-3xl flex-1 px-4 py-6 sm:py-10">${inner}</main>
+    ${footer()}
+  </div>`;
+}
+function footer() {
+  return `<footer class="border-t border-white/10 px-4 py-4 text-center text-xs text-white/50">PORTO talks · “The world as seen by the students” · SDG 4 Quality Education</footer>`;
+}
+function phaseBar(current) {
+  const phases = [[1, "Test"], [2, "Riddle"], [3, "Final Test"]];
+  const pct = Math.min((current - 1) / 3 * 100, 100) || 4;
+  return `<div class="mb-6">
+    <div class="mb-2 h-2 overflow-hidden rounded-full bg-white/10"><div class="h-full rounded-full bg-gradient-to-r from-leaf via-water to-gold transition-all duration-500" style="width:${pct}%"></div></div>
+    <ol class="grid grid-cols-3 gap-2 text-center text-xs sm:text-sm">${phases.map(([n, l]) => {
+      const done = n < current, active = n === current;
+      const c = done ? "border-leaf bg-leaf text-white" : active ? "border-gold bg-gold text-navy" : "border-white/30 text-white/60";
+      return `<li class="flex flex-col items-center gap-1"><span class="flex h-8 w-8 items-center justify-center rounded-full border-2 font-bold ${c}">${done ? "✓" : n}</span><span class="${active ? "font-semibold text-gold" : "text-white/70"}">Phase ${n} · ${l}</span></li>`;
+    }).join("")}</ol>
+  </div>`;
+}
+
+/* ---------- Screens ---------- */
+function home() {
+  const step = currentStep(), inProgress = step !== "level";
+  const phases = [
+    [1, "Test", "10 multiple-choice questions about sustainability and the environment.", "text-leaf"],
+    [2, "Riddle", "An environmental riddle to solve with knowledge and creativity.", "text-water"],
+    [3, "Final Test", "A tougher final challenge to complete the competition.", "text-gold"],
+  ];
+  return `<main class="mx-auto flex max-w-3xl flex-col items-center px-4 py-10 text-center sm:py-16">
+    <div class="drop-shadow-xl">${logo(170)}</div>
+    <p class="mt-6 text-sm font-semibold uppercase tracking-[0.25em] text-gold">PORTO talks · The world as seen by the students</p>
+    <h1 class="mt-3 text-4xl font-black leading-tight sm:text-6xl">Sustainable Olympiad</h1>
+    <p class="mt-5 max-w-xl text-lg text-white/85">A school competition created by students, for students. Test what you know about recycling, water, energy, climate and biodiversity — and prove that you are ready to protect our planet.</p>
+    <p class="mt-3 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm"><span class="h-2 w-2 rounded-full bg-torch"></span> Supporting SDG 4 · Quality Education</p>
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+      <button data-go="level" class="${btn.primary} px-10 py-4 text-lg">${inProgress ? "Start over" : "Start"}</button>
+      ${inProgress ? `<button data-go="${step}" class="${btn.secondary} px-10 py-4 text-lg">Continue</button>` : ""}
+    </div>
+    <section class="mt-14 grid w-full gap-4 text-left sm:grid-cols-3">${phases.map(([n, t, d, c]) => `
+      <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+        <p class="text-sm font-bold uppercase tracking-wider ${c}">Phase ${n}</p>
+        <h2 class="mt-1 text-xl font-bold">${t}</h2>
+        <p class="mt-2 text-sm text-white/75">${d}</p>
+      </div>`).join("")}
+    </section>
+    <section class="mt-6 w-full rounded-2xl bg-white/5 p-5 text-left ring-1 ring-white/10">
+      <h2 class="text-lg font-bold">Four levels, one goal</h2>
+      <ul class="mt-3 grid gap-2 text-sm text-white/80 sm:grid-cols-2">${DATA.levels.map(l => `<li><span class="font-bold ${txt[l.color]}">${l.name}</span> · ${l.audience}</li>`).join("")}</ul>
+    </section>
+  </main>${footer()}`;
+}
+
+function levelScreen() {
+  const s = ui.level;
+  const year = schoolYear(s.yearId);
+  const info = year && levelInfo(year.level);
+  const c = year && content(year.level);
+  return shell(`
+    <h1 class="text-3xl font-black sm:text-4xl">Choose your school year</h1>
+    <p class="mt-2 text-white/75">We'll place you in the right level automatically.</p>
+    <label class="mt-6 block" for="student-name">
+      <span class="text-sm font-semibold text-white/80">Your name (for the certificate, optional)</span>
+      <input id="student-name" data-field="name" value="${esc(s.name)}" maxlength="40" placeholder="e.g. Maria Silva" autocomplete="off"
+        class="mt-2 w-full rounded-2xl border-2 border-white/20 bg-navy-light px-4 py-3 text-white placeholder:text-white/40 focus:border-water focus:outline-none">
+    </label>
+    <div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">${DATA.schoolYears.map(y => {
+      const li = levelInfo(y.level), sel = y.id === s.yearId;
+      return `<button data-year="${y.id}" aria-pressed="${sel}" class="rounded-2xl p-4 text-left ring-2 transition ${sel ? ring[li.color] : "bg-white/5 ring-white/10 hover:ring-white/40"}">
+        <span class="block text-base font-bold leading-tight">${y.label}</span>
+        <span class="mt-1 block text-xs font-semibold ${txt[li.color]}">${li.name}</span></button>`;
+    }).join("")}</div>
+    ${info ? `<div class="mt-8 rounded-3xl p-6 ring-2 ${ring[info.color]}">
+      <p class="text-sm uppercase tracking-widest text-white/70">You have been placed in</p>
+      <p class="mt-1 text-4xl font-black ${txt[info.color]}">${info.name}</p>
+      <p class="mt-1 text-white/80">${info.audience}</p>
+      <ul class="mt-4 grid gap-1 text-sm text-white/85">
+        <li>① Test · ${c.test.length} questions</li><li>② Riddle · up to 2 hints</li><li>③ Final Test · ${c.final.length} harder questions</li>
+      </ul>
+      <button data-action="begin" class="${btn.primary} mt-6 w-full sm:w-auto">Begin Phase 1 →</button>
+    </div>` : ""}
+  `);
+}
+
+function quizScreen() {
+  const q = ui.quiz, isFinal = q.phase === "final";
+  const title = isFinal ? "Phase 3 · Final Test" : "Phase 1 · Test";
+  const pts = isFinal ? FINAL_PTS : TEST_PTS, max = q.items.length * pts;
+  const bar = phaseBar(q.finished ? (isFinal ? 4 : 2) : (isFinal ? 3 : 1));
+  if (q.finished) {
+    const pct = Math.round(q.correct / q.items.length * 100);
+    const msg = pct >= 80 ? "Outstanding! You're a true guardian of the planet. 🌍" : pct >= 50 ? "Well done! You know a lot about sustainability. 🌱" : "Good effort! Every answer is a chance to learn something new. 💧";
+    return shell(bar + `<section class="rounded-3xl bg-white/5 p-6 text-center ring-1 ring-white/10 sm:p-10">
+      <p class="text-sm uppercase tracking-widest text-gold">${title} complete</p>
+      <p class="tabular mt-4 text-6xl font-black">${q.correct * pts}<span class="text-2xl text-white/60"> / ${max}</span></p>
+      <p class="mt-2 text-white/80">${q.correct} of ${q.items.length} correct (${pct}%)</p>
+      <p class="mt-4 text-lg">${msg}</p>
+      <button data-go="${isFinal ? "results" : "riddle"}" class="${btn.primary} mt-8">${isFinal ? "See my results" : "Go to Phase 2 · Riddle"} →</button>
+    </section>`);
+  }
+  const item = q.items[q.index], answered = q.picked !== null, isLast = q.index === q.items.length - 1;
+  const intro = isFinal
+    ? `The last challenge! These ${q.items.length} questions are harder, so each one is worth ${FINAL_PTS} points.`
+    : `${levelInfo(P.level).name}: answer ${q.items.length} questions about sustainability. Each correct answer is worth ${TEST_PTS} point.`;
+  const letters = ["A", "B", "C", "D", "E"];
+  return shell(bar + `
+    <div class="mb-4 flex items-baseline justify-between gap-4">
+      <h1 class="text-2xl font-black sm:text-3xl">${title}</h1>
+      <span class="tabular shrink-0 rounded-full bg-white/10 px-3 py-1 text-sm font-semibold">${q.index + 1} / ${q.items.length}</span>
+    </div>
+    ${q.index === 0 && !answered ? `<p class="mb-4 text-white/70">${intro}</p>` : ""}
+    <div class="mb-3 h-1.5 overflow-hidden rounded-full bg-white/10"><div class="h-full bg-water transition-all" style="width:${(q.index + (answered ? 1 : 0)) / q.items.length * 100}%"></div></div>
+    <div class="rounded-3xl bg-white/5 p-5 ring-1 ring-white/10 sm:p-8">
+      <h2 class="mb-5 text-lg font-bold leading-snug sm:text-xl">${esc(item.question)}</h2>
+      <ul class="grid gap-3">${item.options.map((o, i) => {
+        let style = "border-white/20 bg-navy-light hover:border-water hover:bg-water/10", badge = "bg-white/10", mark = letters[i];
+        if (answered) {
+          if (i === item.answer) { style = "border-leaf bg-leaf/25"; badge = "bg-leaf"; mark = "✓"; }
+          else if (i === q.picked) { style = "border-torch bg-torch/25"; badge = "bg-torch"; mark = "✗"; }
+          else style = "border-white/10 bg-navy-light opacity-60";
+        }
+        return `<li><button data-pick="${i}" ${answered ? "disabled" : ""} class="flex w-full items-center gap-3 rounded-2xl border-2 p-3 text-left transition sm:p-4 ${style}">
+          <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-bold ${badge}">${mark}</span><span class="min-w-0">${esc(o)}</span></button></li>`;
+      }).join("")}</ul>
+      ${answered ? `<div class="mt-5 rounded-2xl p-4 ${q.picked === item.answer ? "bg-leaf/15 ring-1 ring-leaf/50" : "bg-torch/15 ring-1 ring-torch/50"}" role="status">
+        <p class="font-bold">${q.picked === item.answer ? "Correct! 🎉" : "Not quite."}</p>
+        <p class="mt-1 text-white/85">${esc(item.explanation)}</p></div>` : ""}
+    </div>
+    <div class="mt-5 flex items-center justify-between gap-3">
+      <span class="tabular text-sm text-white/60">Score: ${q.correct * pts} / ${max}</span>
+      <button data-action="next" ${answered ? "" : "disabled"} class="${btn.primary}">${isLast ? "See my score" : "Next question"} →</button>
+    </div>`);
+}
+
+function riddleScreen() {
+  const r = ui.riddle, riddle = content(P.level).riddle;
+  const worth = RIDDLE_POINTS[Math.min(r.hintsUsed, 2)];
+  const hints = riddle.hints.slice(0, r.hintsUsed).map((h, i) =>
+    `<p class="mt-3 rounded-2xl bg-gold/15 p-4 ring-1 ring-gold/50"><span class="font-bold text-gold">Hint ${i + 1}:</span> ${esc(h)}</p>`).join("");
+  const body = r.outcome ? `
+    <section class="mt-6 rounded-3xl p-6 text-center ring-2 ${r.outcome === "solved" ? "bg-leaf/15 ring-leaf" : "bg-white/5 ring-white/20"}">
+      <p class="text-sm uppercase tracking-widest text-white/70">${r.outcome === "solved" ? "Riddle solved! 🎉" : "The answer was"}</p>
+      <p class="mt-2 text-4xl font-black">${esc(riddle.solution)}</p>
+      <p class="mt-3 text-white/85">${esc(riddle.explanation)}</p>
+      <p class="tabular mt-4 text-2xl font-bold">+${r.outcome === "solved" ? worth : 0}<span class="text-base text-white/60"> / ${RIDDLE_MAX} points</span></p>
+      <button data-go="final" class="${btn.primary} mt-6">Go to Phase 3 · Final Test →</button>
+    </section>` : `
+    <form data-form="riddle" class="mt-6 flex flex-col gap-3 sm:flex-row">
+      <input id="riddle-answer" data-field="guess" value="${esc(r.guess)}" placeholder="Type your answer…" aria-label="Your answer" autocomplete="off" autocapitalize="off"
+        class="min-w-0 flex-1 rounded-2xl border-2 border-white/20 bg-navy-light px-4 py-3 text-lg text-white placeholder:text-white/40 focus:border-water focus:outline-none">
+      <button type="submit" class="${btn.primary}">Submit answer</button>
+    </form>
+    ${r.wrong ? `<p class="mt-3 text-torch" role="status">Not quite — try again! (${r.wrong} ${r.wrong === 1 ? "attempt" : "attempts"})</p>` : ""}
+    <div class="mt-6 flex flex-wrap items-center gap-3">
+      <button data-action="hint" ${r.hintsUsed >= riddle.hints.length ? "disabled" : ""} class="${btn.ghost}">💡 Get a hint (${riddle.hints.length - r.hintsUsed} left)</button>
+      <span class="text-sm text-white/70">Currently worth <strong class="text-gold">${worth} points</strong></span>
+      <button data-action="reveal" class="ml-auto text-sm text-white/50 underline hover:text-white">Give up and reveal (0 points)</button>
+    </div>`;
+  return shell(phaseBar(r.outcome ? 3 : 2) + `
+    <h1 class="text-2xl font-black sm:text-3xl">Phase 2 · Riddle</h1>
+    <p class="mt-2 text-white/75">Use your knowledge and creativity! Solve it without hints for ${RIDDLE_MAX} points. Each hint lowers the prize.</p>
+    <figure class="mt-6 rounded-3xl bg-gradient-to-br from-water/25 to-leaf/20 p-6 ring-1 ring-white/15 sm:p-8">
+      <span aria-hidden="true" class="text-4xl">🧩</span>
+      <blockquote class="mt-3 whitespace-pre-line text-lg font-medium leading-relaxed sm:text-xl">${esc(riddle.text)}</blockquote>
+    </figure>
+    ${hints}${body}`);
+}
+
+function resultsScreen() {
+  const { score, max } = total(), pct = Math.round(score / max * 100), m = medalFor(pct);
+  const info = levelInfo(P.level), year = schoolYear(P.schoolYearId);
+  const rows = [
+    ["Phase 1 · Test", P.test, "bg-leaf", ""],
+    ["Phase 2 · Riddle", P.riddle, "bg-water", P.riddle.solved ? `${P.riddle.hintsUsed} hint${P.riddle.hintsUsed === 1 ? "" : "s"} used` : "Not solved"],
+    ["Phase 3 · Final Test", P.final, "bg-gold", ""],
+  ];
+  return shell(phaseBar(4) + `
+    <section class="text-center">
+      <p class="text-sm uppercase tracking-widest text-gold">Competition complete</p>
+      <h1 class="mt-2 text-3xl font-black sm:text-4xl">${P.studentName ? `Congratulations, ${esc(P.studentName)}!` : "Congratulations!"}</h1>
+      <p class="mt-2 text-white/75">${info.name}${year ? ` · ${year.label}` : ""}</p>
+      <div class="mx-auto mt-8 flex h-44 w-44 flex-col items-center justify-center rounded-full bg-white/5 ring-8 ring-gold/70">
+        <span class="tabular text-5xl font-black">${score}</span><span class="text-white/60">of ${max} points</span>
+      </div>
+      <p class="mt-4 text-2xl font-black ${m.cls}">${m.label === "Participant" ? "🌱 Green Participant" : `🏅 ${m.label} medal`} · ${pct}%</p>
+    </section>
+    <ul class="mt-8 grid gap-3">${rows.map(([l, r, c, note]) => `
+      <li class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+        <div class="flex items-baseline justify-between gap-4"><span class="font-bold">${l}</span><span class="tabular font-bold">${r.score} <span class="text-white/60">/ ${r.max}</span></span></div>
+        <div class="mt-2 h-2 overflow-hidden rounded-full bg-white/10"><div class="h-full rounded-full ${c}" style="width:${r.score / r.max * 100}%"></div></div>
+        ${note ? `<p class="mt-1 text-xs text-white/60">${note}</p>` : ""}
+      </li>`).join("")}</ul>
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+      <button data-go="certificate" class="${btn.primary}">🎓 View my certificate</button>
+      <button data-action="again" class="${btn.ghost}">Play again</button>
+    </div>`);
+}
+
+function certificateScreen() {
+  const { score, max } = total(), pct = Math.round(score / max * 100), m = medalFor(pct);
+  const info = levelInfo(P.level), year = schoolYear(P.schoolYearId);
+  const date = new Date(P.completedAt || Date.now()).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  return shell(`
+    <article class="relative overflow-hidden rounded-3xl bg-white p-2 text-navy shadow-2xl">
+      <div class="absolute inset-x-0 top-0 flex h-2"><span class="flex-1 bg-leaf"></span><span class="flex-1 bg-water"></span><span class="flex-1 bg-gold"></span><span class="flex-1 bg-torch"></span></div>
+      <div class="rounded-[1.25rem] border-4 border-double border-gold p-6 text-center sm:p-10">
+        <div class="flex justify-center">${logo(96)}</div>
+        <p class="mt-4 text-xs font-bold uppercase tracking-[0.3em] text-water">Sustainable Olympiad</p>
+        <h1 class="mt-2 font-serif text-3xl font-black sm:text-5xl">Certificate of Completion</h1>
+        <p class="mt-6 text-navy/70">This certificate is proudly awarded to</p>
+        <p class="mt-2 border-b-2 border-gold/60 pb-2 font-serif text-3xl font-bold italic sm:text-4xl">${esc(P.studentName || "Olympiad Participant")}</p>
+        <p class="mx-auto mt-6 max-w-lg text-navy/80">for successfully completing all three phases of the Sustainable Olympiad — Test, Riddle and Final Test — in <strong>${info.name}</strong>${year ? ` (${year.label})` : ""}, showing commitment to a more sustainable world.</p>
+        <div class="mt-8 grid grid-cols-3 gap-2 text-sm">
+          <div><p class="tabular text-2xl font-black">${score}/${max}</p><p class="text-navy/60">Total score</p></div>
+          <div><p class="text-2xl font-black">${m.label === "Participant" ? "🌱" : "🏅"}</p><p class="text-navy/60">${m.label === "Participant" ? "Green Participant" : m.label + " medal"}</p></div>
+          <div><p class="tabular text-2xl font-black">${pct}%</p><p class="text-navy/60">${date}</p></div>
+        </div>
+        <p class="mt-8 text-xs text-navy/60">PORTO talks · “The world as seen by the students” · SDG 4 Quality Education</p>
+      </div>
+    </article>
+    <div class="mt-6 flex justify-center"><button data-go="results" class="${btn.ghost}">← Back to results</button></div>`);
+}
+
+/* ---------- Navigation & events ---------- */
+function go(screen) {
+  // Phases run in order: steer to the step the saved progress allows.
+  const step = currentStep();
+  if (["test", "riddle", "final"].includes(screen) && screen !== step) screen = step === "level" ? "level" : step;
+  if ((screen === "results" || screen === "certificate") && step !== "results") screen = step;
+  if (screen === "level") ui.level = { yearId: null, name: P.studentName || "" };
+  if (screen === "test" || screen === "final") {
+    const items = content(P.level)[screen].map(shuffle);
+    ui.quiz = { phase: screen, items, index: 0, picked: null, correct: 0, finished: false };
+    screen = "quiz";
+  }
+  if (screen === "riddle") ui.riddle = { hintsUsed: 0, wrong: 0, outcome: null, guess: "" };
+  ui.screen = screen;
+  render();
+  window.scrollTo(0, 0);
+}
+function render() {
+  const s = ui.screen;
+  app.innerHTML = s === "home" ? home() : s === "level" ? levelScreen() : s === "quiz" ? quizScreen()
+    : s === "riddle" ? riddleScreen() : s === "results" ? resultsScreen() : certificateScreen();
+}
+
+app.addEventListener("input", e => {
+  const f = e.target.dataset.field;
+  if (f === "name") ui.level.name = e.target.value;
+  if (f === "guess") ui.riddle.guess = e.target.value;
+});
+app.addEventListener("submit", e => {
+  e.preventDefault();
+  const r = ui.riddle, riddle = content(P.level).riddle;
+  if (!r.guess.trim() || r.outcome) return;
+  if (riddleCorrect(r.guess, riddle.answers)) {
+    r.outcome = "solved";
+    P.riddle = { score: RIDDLE_POINTS[Math.min(r.hintsUsed, 2)], max: RIDDLE_MAX, hintsUsed: r.hintsUsed, solved: true };
+    save(); render();
+  } else {
+    r.wrong++; render();
+    const input = document.getElementById("riddle-answer");
+    if (input) { input.focus(); input.select(); }
+  }
+});
+app.addEventListener("click", e => {
+  const el = e.target.closest("button");
+  if (!el || el.disabled) return;
+  const d = el.dataset;
+  if (d.go) return go(d.go);
+  if (d.year) { ui.level.yearId = d.year; return render(); }
+  if (d.pick !== undefined) {
+    const q = ui.quiz, item = q.items[q.index];
+    if (q.picked !== null) return;
+    q.picked = Number(d.pick);
+    if (q.picked === item.answer) q.correct++;
+    return render();
+  }
+  switch (d.action) {
+    case "begin": {
+      const y = schoolYear(ui.level.yearId);
+      P = { ...empty, studentName: ui.level.name.trim(), schoolYearId: y.id, level: y.level };
+      save(); return go("test");
+    }
+    case "next": {
+      const q = ui.quiz, pts = q.phase === "final" ? FINAL_PTS : TEST_PTS;
+      if (q.index === q.items.length - 1) {
+        const result = { score: q.correct * pts, max: q.items.length * pts };
+        if (q.phase === "final") { P.final = result; P.completedAt = new Date().toISOString(); } else P.test = result;
+        q.finished = true; save();
+      } else { q.index++; q.picked = null; }
+      render(); window.scrollTo(0, 0); return;
+    }
+    case "hint": ui.riddle.hintsUsed++; return render();
+    case "reveal": {
+      const r = ui.riddle;
+      r.outcome = "revealed";
+      P.riddle = { score: 0, max: RIDDLE_MAX, hintsUsed: r.hintsUsed, solved: false };
+      save(); return render();
+    }
+    case "again": P = { ...empty, studentName: P.studentName }; save(); return go("level");
+  }
+});
+
+render();
+</script>
+
+</body>
+</html>

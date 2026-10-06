@@ -75,3 +75,9 @@ are in `tailwind.config.ts`.
 ## Official website
 
 The Olympiad's public one-page website lives in [`website/`](website/README.md), a separate Next.js app.
+
+## Offline files (open with a double click)
+
+`standalone/dist/` holds self-contained HTML files that open in any browser on any computer, with no
+server or install: the official website and the playable competition, plus `Sustainable-Olympiad.zip`
+with both. Rebuild them with `npm run build:standalone`.
