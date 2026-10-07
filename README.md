@@ -74,7 +74,7 @@ are in `tailwind.config.ts`.
 
 ## Official website
 
-The Olympiad's public one-page website lives in [`website/`](website/README.md), a separate Next.js app.
+The Olympiad's public multi-page website lives in [`website/`](website/README.md), a separate Next.js app.
 
 ## Offline files (open with a double click)
 
