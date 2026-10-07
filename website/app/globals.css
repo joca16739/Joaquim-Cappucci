@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #0b2f5e;
+  background-color: #f7f4ec;
 }
 
 body {
-  background-color: #0b2f5e;
-  color: #ffffff;
+  background-color: #f7f4ec;
+  color: #1b3a2f;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -23,9 +23,9 @@ h3 {
   text-wrap: balance;
 }
 
-/* Keep anchored sections clear of the sticky menu. */
-section[id] {
-  scroll-margin-top: 4.5rem;
+/* Keep in-page anchors clear of the sticky navbar. */
+[id] {
+  scroll-margin-top: 5.5rem;
 }
 
 details > summary {
@@ -42,7 +42,7 @@ details > summary::-webkit-details-marker {
   *,
   *::before,
   *::after {
-    transition: none !important;
     animation: none !important;
+    transition: none !important;
   }
 }

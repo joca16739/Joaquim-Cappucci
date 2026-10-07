@@ -2,8 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  // One static page: `next build` writes it to `out/`, ready for any static host.
+  // Static site: `next build` writes every page to `out/`, ready for any static host.
   output: "export",
+  trailingSlash: true,
   images: { unoptimized: true },
 };
 

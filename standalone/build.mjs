@@ -49,14 +49,20 @@ fs.writeFileSync(
 );
 
 /* ---------- Official website (from the Next.js static export) ---------- */
+// Every tab of the site goes into one file; a small script switches tabs by #hash.
 const out = path.join(root, "website/out");
 if (!fs.existsSync(path.join(out, "index.html"))) {
   throw new Error("Build the website first: npm --prefix website run build");
 }
-const html = fs.readFileSync(path.join(out, "index.html"), "utf8");
+const routes = ["home", "about", "objectives", "how-it-works", "why-it-matters", "participate", "faq"];
+const pageHtml = (r) => fs.readFileSync(path.join(out, r === "home" ? "index.html" : `${r}/index.html`), "utf8");
+const stripNext = (s) => s.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, "").replace(/<!--[\s\S]*?-->/g, "");
+
+const home = pageHtml("home");
 const cssDir = path.join(out, "_next/static/css");
 const siteCss = fs.readdirSync(cssDir).sort().map((f) => fs.readFileSync(path.join(cssDir, f), "utf8")).join("");
-const fontHref = html.match(/<link rel="stylesheet" href="(https:\/\/fonts\.googleapis\.com[^"]+)"/)[1];
+const fontHref = home.match(/<link rel="stylesheet" href="(https:\/\/fonts\.googleapis\.com[^"]+)"/)[1];
+
 // Embed the logo so the file works from disk; without it, show the placeholder box.
 const logoPath = path.join(root, "website/public/logo.png");
 const logoSrc = fs.existsSync(logoPath)
@@ -64,33 +70,79 @@ const logoSrc = fs.existsSync(logoPath)
   : null;
 const withLogo = (s) => (logoSrc ? s.replaceAll('"/logo.png"', `"${logoSrc}"`) : s);
 const iconLinks = logoSrc ? `<link rel="icon" href="${logoSrc}">\n<link rel="apple-touch-icon" href="${logoSrc}">` : "";
-const siteBody = html
-  .match(/<body[^>]*>([\s\S]*)<\/body>/)[1]
-  .replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, "") // the static page needs no Next.js runtime
-  .replace(/<!--[\s\S]*?-->/g, "");
+
+// Site links become hash links: "/about/" → "#about", "/participate/#schools" → "#participate--schools".
+const toHash = (s) =>
+  s.replace(/href="\/([a-z-]*)\/?(?:#([a-z-]+))?"/g, (_, route, anchor) => `href="#${route || "home"}${anchor ? `--${anchor}` : ""}"`);
+
+const body = stripNext(home.match(/<body[^>]*>([\s\S]*)<\/body>/)[1]);
+const navbar = body.match(/<header[\s\S]*?<\/header>/)[0];
+const footer = body.match(/<footer[\s\S]*?<\/footer>/)[0];
+const titles = {};
+const pages = routes
+  .map((r) => {
+    const h = pageHtml(r);
+    titles[r] = h.match(/<title>([^<]*)<\/title>/)[1];
+    const main = stripNext(h.match(/<main id="page-content"[^>]*>([\s\S]*)<\/main>/)[1]);
+    return `<div data-page="${r}"${r === "home" ? "" : " hidden"}>${main}</div>`;
+  })
+  .join("\n");
+
+const siteBodyHtml = toHash(withLogo(`<div class="flex min-h-screen flex-col font-sans">
+${navbar}
+<main id="page-content" class="flex-1">
+${pages}
+</main>
+${footer}
+</div>`));
+
+const siteScript = `<script>
+  (function () {
+    var titles = ${JSON.stringify(titles)};
+    var menu = document.getElementById("mobile-menu");
+    function show() {
+      var parts = (location.hash.slice(1) || "home").split("--");
+      var page = titles[parts[0]] ? parts[0] : "home";
+      document.querySelectorAll("[data-page]").forEach(function (el) { el.hidden = el.getAttribute("data-page") !== page; });
+      document.querySelectorAll("header a[href^='#']").forEach(function (a) {
+        if (a.getAttribute("href") === "#" + page) a.setAttribute("aria-current", "page");
+        else a.removeAttribute("aria-current");
+      });
+      document.title = titles[page];
+      if (menu) menu.removeAttribute("open");
+      var target = parts[1] && document.getElementById(parts[1]);
+      if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
+    }
+    window.addEventListener("hashchange", show);
+    show();
+    // No logo file embedded: swap broken logo images for a placeholder.
+    document.querySelectorAll('img[src="/logo.png"]').forEach(function (img) {
+      var box = img.parentElement;
+      box.className = box.className.replace("bg-white", "border-2 border-dashed border-forest/40 bg-white");
+      box.innerHTML = '<span style="font-size:.55rem;font-weight:700;letter-spacing:.08em;color:rgba(46,125,50,.75)">LOGO</span>';
+    });
+  })();
+</script>`;
+
 fs.writeFileSync(
   path.join(dist, "Sustainable-Olympiad-Website.html"),
   documentFrom({
     title: "Sustainable Olympiad",
-    head: `<meta name="theme-color" content="#0b2f5e">
+    head: `<meta name="theme-color" content="#2E7D32">
 ${iconLinks}
 <link rel="stylesheet" href="${fontHref}">
 <style>${siteCss}</style>`,
-    body: `<div class="font-sans">${withLogo(siteBody)}</div>
-<script>
-  // No logo file embedded: swap broken logo images for a placeholder.
-  document.querySelectorAll('img[src="/logo.png"]').forEach(function (img) {
-    var box = img.parentElement;
-    box.className = box.className.replace("bg-white", "border-2 border-dashed border-white/40 bg-navy-deep");
-    box.innerHTML = '<span style="font-size:.55rem;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,.6)">LOGO</span>';
-  });
-  // Close the mobile menu after choosing a section.
-  document.querySelectorAll("#mobile-menu a").forEach(function (a) {
-    a.addEventListener("click", function () { document.getElementById("mobile-menu").removeAttribute("open"); });
-  });
-</script>`,
+    body: `${siteBodyHtml}\n${siteScript}`,
   }),
 );
+
+// Optional: the same page without the document wrapper, for publishing as a claude.ai artifact.
+if (process.env.ARTIFACT_OUT) {
+  fs.writeFileSync(
+    process.env.ARTIFACT_OUT,
+    `<title>Sustainable Olympiad</title>\n<link rel="stylesheet" href="${fontHref}">\n<style>${siteCss}</style>\n${siteBodyHtml}\n${siteScript}\n`,
+  );
+}
 
 /* ---------- ZIP with both pages and the read-me ---------- */
 const zip = path.join(dist, "Sustainable-Olympiad.zip");

@@ -1,7 +1,4 @@
-/**
- * Dashed box marking where a logo image goes. Swap for
- * <img src="/your-logo.png" alt="…" /> once the file is in /public.
- */
+/** Dashed box marking where an image goes until the real file is added. */
 export default function ImagePlaceholder({
   label,
   className = "",
@@ -15,7 +12,7 @@ export default function ImagePlaceholder({
     <div
       role="img"
       aria-label={`${label} (placeholder)`}
-      className={`flex shrink-0 items-center justify-center border-2 border-dashed border-white/40 bg-white/5 p-2 text-center text-[0.7rem] font-semibold uppercase leading-tight tracking-wider text-white/60 ${
+      className={`flex shrink-0 items-center justify-center border-2 border-dashed border-forest/40 bg-white p-2 text-center text-[0.65rem] font-bold uppercase leading-tight tracking-wider text-forest/70 ${
         shape === "circle" ? "aspect-square rounded-full" : "rounded-xl"
       } ${className}`}
     >
